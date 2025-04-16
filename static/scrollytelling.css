@@ -348,8 +348,8 @@ Paragraphs
 ------------------------------------------ */
 p {
     margin-bottom: 10px;
-    text-align: justify;
-    hyphens: auto;
+    /*text-align: justify;*/
+    /*hyphens: auto;*/
 }
 
 .bold {
