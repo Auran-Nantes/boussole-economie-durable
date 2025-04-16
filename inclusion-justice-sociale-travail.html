@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Inclusion, justice sociale et conditions de travail | Boussole de l’économie soutenable</title>
+    <link rel="stylesheet" href="static/scrollytelling.css">
+    <link rel="stylesheet" href="./libraries/leaflet/leaflet.css"/>
+    <script src="./libraries/echarts/echarts.min.js"></script>
+</head>
+<body>
+
+<header id='header' class="is-secondary-1">
+    <div class="title"><img src="static/climat-ressources-biodiversite/picto_sect1.svg">
+        <div>Inclusion, justice sociale et conditions de travail</div>
+    </div>
+    <nav id="navbar">
+        <a href="#title-1" class="is-active"><span>Accès à l’emploi</span></a>
+        <a href="#title-2"><span>Diversité</span></a>
+        <a href="#title-3"><span>Égalité</span></a>
+        <a href="#title-4"><span>Conditions de travail</span></a>
+    </nav>
+</header>
+
+<scroll-scene scroll-title="none">
+    <div class="hero is-white">
+        <img src="./static/climat-ressources-biodiversite/titre_section1.svg"
+             class="hero-full-element">
+    </div>
+</scroll-scene>
+
+
+<scroll-scene scroll-title="1">
+    <section class="is-secondary-1">
+        <div id="title-1"></div>
+        <h1 class="stick-to-top sticky-title has-background-white"><span>Dynamisme de l’emploi métropolitain</span></h1>
+        <div class="columns stick-to-top stick-to-title has-background-white">
+            <div class="column is-size-2 stick-to-top stick-to-title">
+                <figure id="emploi-salarie" class="min-full-height-with-title"></figure>
+            </div>
+            <div class="column">
+                <scroll-scene scroll-figure="emploi-salarie" scroll-type="chart" scroll-chart-name="emploiSalarieNM">
+                    <p class="stick-to-top stick-to-title sticky-anchor has-background-white">
+                        La métropole nantaise a affiché un rythme très soutenu de créations d’emplois salariés au cours
+                        de la dernière décennie (+32% entre 2010 et 2023).
+                    </p>
+                    <div class="min-full-height"></div>
+                    <p class="stick-to-top stick-to-anchor has-background-white">
+                        Au total, les établissements du secteur privé emploient 314 000 salariés sur la métropole
+                        nantaise.
+                    </p>
+                    <div class="min-full-height"></div>
+                </scroll-scene>
+                <scroll-scene scroll-figure="emploi-salarie" scroll-type="chart"
+                              scroll-chart-name="emploiSalarieSecteurs">
+                    <p class="stick-to-top stick-to-title sticky-anchor has-background-white">
+                        Cette hausse de l’emploi salarié privé a concerné tous les grands secteurs de l’économie, y
+                        compris l’industrie qui a dans le même temps vu ses effectifs reculer à l’échelle nationale.
+                    </p>
+                    <div class="min-full-height"></div>
+                    <p class="stick-to-top stick-to-anchor has-background-white">
+                        Globalement, la dynamique de croissance sur le territoire métropolitain progresse de manière
+                        plus intense que la tendance nationale.
+                    </p>
+                    <div class="min-full-height"></div>
+                </scroll-scene>
+                <scroll-scene scroll-figure="emploi-salarie" scroll-type="chart" scroll-chart-name="chomageNM">
+                    <p class="stick-to-top stick-to-title has-background-white">
+                        Le taux de chômage au sein de la zone d’emploi de Nantes s’établit à 5,5 % de la population
+                        active au 2e trimestre 2024. Il a nettement diminué dans les dernières années et se situe très
+                        en deçà de la moyenne nationale (7,4%).
+                    </p>
+                    <div class="min-full-height"></div>
+                </scroll-scene>
+                <scroll-scene scroll-figure="emploi-salarie" scroll-type="chart" scroll-chart-name="chomageComparaison">
+                    <p class="stick-to-top stick-to-title has-background-white">
+                        Parmi les principales zones d’emploi françaises, Nantes affiche le taux de chômage le plus bas,
+                        devant Lyon et Bordeaux.
+                    </p>
+                    <div class="min-full-height"></div>
+                </scroll-scene>
+            </div>
+        </div>
+    </section>
+</scroll-scene>
+
+
+<scroll-scene scroll-title="2">
+    <section class="is-secondary-2">
+        <div id="title-2"></div>
+        <h1 class="stick-to-top sticky-title has-background-white"><span>Profil des demandeurs d’emploi</span></h1>
+        <div class="columns stick-to-top stick-to-title has-background-white">
+            <div class="column">
+                <scroll-scene>
+                    <p>
+                        Sur Nantes Métropole, cela représente donc 25 200 demandeurs d’emploi de catégorie A (aucune
+                        activité au cours du mois écoulé).
+                    </p>
+                    <p>
+                        Parmi ces demandeurs, 32% sont demandeurs de longue durée (environ 8 000 personnes).
+                    </p>
+                    <p>
+                        Ces chiffres soulignent l’enjeu des difficultés d’insertion professionnelle, même au sein d’un
+                        territoire affichant un taux de chômage bas et de fortes créations d’emplois.
+                    </p>
+                </scroll-scene>
+                <scroll-scene>
+                    <p>
+
+                    </p>
+                </scroll-scene>
+            </div>
+            <div class="column is-size-2 stick-to-top stick-to-title">
+                <figure id="demandeurs-emploi" class="min-full-height-with-title"></figure>
+            </div>
+        </div>
+    </section>
+</scroll-scene>
+
+
+<footer>
+    <nav>
+        <a href="index.html">Revenir à la page d’accueil</a>
+        <a href="#">Accéder aux chiffres clés</a>
+        <a href="https://auran.org" class="auran-link"></a>
+        <a href="#">Revenir en haut de page</a>
+        <a href="#">Poursuivre section suivante</a>
+    </nav>
+    <div class="footer-end"></div>
+</footer>
+
+
+<!-- Chargement des scripts des bibliothèques JS -->
+<script src="./libraries/scroll-scene-element/scroll-scene-element.js" type="module"></script>
+<!-- Leaflet production -->
+<script src="./libraries/leaflet/leaflet.js"></script>
+<!-- Leaflet dev -->
+<!--<script src="./libraries/leaflet/leaflet-src.js"></script>-->
+<script src="static/scrollytelling.js"></script>
+<script src="static/inclusion-justice-social-travail/script.js"></script>
+</body>
+</html>
