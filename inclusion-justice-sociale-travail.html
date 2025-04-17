@@ -36,7 +36,7 @@
         <h1 class="stick-to-top sticky-title has-background-white"><span>Dynamisme de l’emploi métropolitain</span></h1>
         <div class="columns stick-to-top stick-to-title has-background-white">
             <div class="column is-size-2 stick-to-top stick-to-title">
-                <figure id="emploi-salarie" class="min-full-height-with-title"></figure>
+                <figure id="emploi-salarie" class="min-full-height with-title"></figure>
             </div>
             <div class="column">
                 <scroll-scene scroll-figure="emploi-salarie" scroll-type="chart" scroll-chart-name="emploiSalarieNM">
@@ -64,21 +64,21 @@
                     </p>
                     <div class="min-full-height"></div>
                 </scroll-scene>
-                <scroll-scene scroll-figure="emploi-salarie" scroll-type="chart" scroll-chart-name="chomageNM">
-                    <p class="stick-to-top stick-to-title has-background-white">
-                        Le taux de chômage au sein de la zone d’emploi de Nantes s’établit à 5,5 % de la population
-                        active au 2e trimestre 2024. Il a nettement diminué dans les dernières années et se situe très
-                        en deçà de la moyenne nationale (7,4%).
-                    </p>
-                    <div class="min-full-height"></div>
-                </scroll-scene>
-                <scroll-scene scroll-figure="emploi-salarie" scroll-type="chart" scroll-chart-name="chomageComparaison">
-                    <p class="stick-to-top stick-to-title has-background-white">
-                        Parmi les principales zones d’emploi françaises, Nantes affiche le taux de chômage le plus bas,
-                        devant Lyon et Bordeaux.
-                    </p>
-                    <div class="min-full-height"></div>
-                </scroll-scene>
+                <!--                <scroll-scene scroll-figure="emploi-salarie" scroll-type="chart" scroll-chart-name="chomageNM">
+                                    <p class="stick-to-top stick-to-title has-background-white">
+                                        Le taux de chômage au sein de la zone d’emploi de Nantes s’établit à 5,5 % de la population
+                                        active au 2e trimestre 2024. Il a nettement diminué dans les dernières années et se situe très
+                                        en deçà de la moyenne nationale (7,4%).
+                                    </p>
+                                    <div class="min-full-height"></div>
+                                </scroll-scene>
+                                <scroll-scene scroll-figure="emploi-salarie" scroll-type="chart" scroll-chart-name="chomageComparaison">
+                                    <p class="stick-to-top stick-to-title has-background-white">
+                                        Parmi les principales zones d’emploi françaises, Nantes affiche le taux de chômage le plus bas,
+                                        devant Lyon et Bordeaux.
+                                    </p>
+                                    <div class="min-full-height"></div>
+                                </scroll-scene>-->
             </div>
         </div>
     </section>
@@ -111,9 +111,84 @@
                 </scroll-scene>
             </div>
             <div class="column is-size-2 stick-to-top stick-to-title">
-                <figure id="demandeurs-emploi" class="min-full-height-with-title"></figure>
+                <figure id="demandeurs-emploi" class="min-full-height with-title"></figure>
             </div>
         </div>
+    </section>
+</scroll-scene>
+
+
+<scroll-scene scroll-title="3">
+    <section class="is-secondary-3">
+        <div id="title-3"></div>
+        <h1 class="stick-to-top sticky-title has-background-white"><span>Insertion professionnelle</span></h1>
+
+        <div class="columns stick-to-top stick-to-title sticky-stack has-background-white">
+            <div class="column">
+                <div class="key-value">
+                    <p class="value">2 800</p>
+                    <p class="description">
+                        personnes bénéficient de l’insertion par l’activité économique (IAE) en Loire-Atlantique en 2024
+                    </p>
+                </div>
+            </div>
+            <div class="column is-size-2">
+                <p>
+                    Les structures d’insertion par l’activité économique ont pour objectif d’offrir aux personnes sans
+                    emploi, confrontées à des difficultés sociales et professionnelles, l’opportunité d’accéder à un
+                    contrat de travail tout en bénéficiant d’un accompagnement adapté pour favoriser leur intégration
+                    sociale et professionnelle.
+                </p>
+            </div>
+        </div>
+        <div class="min-full-height"></div>
+        <div class="columns stick-to-top stick-to-title sticky-stack has-background-white">
+            <div class="column">
+                <div class="key-value">
+                    <p class="value">29</p>
+                    <p class="description">
+                        structures d’insertion par l’activité économique (SIAE) sur le territoire en 2024
+                    </p>
+                </div>
+            </div>
+            <div class="column is-size-2">
+                <p>
+                    Sur la métropole nantaise, elles prennent la forme d’ateliers et chantiers d’insertion,
+                    d’associations ou encore d’entreprises, intervenant dans des secteurs très variés : entretien des
+                    espaces verts, BTP, collecte des déchets, alimentaire, aide ménagère, etc.
+                </p>
+            </div>
+        </div>
+        <div class="min-full-height"></div>
+        <div class="columns stick-to-top stick-to-title sticky-stack has-background-white">
+            <div class="column">
+                <div class="key-value">
+                    <p class="value">113</p>
+                    <p class="description">
+                        entreprises labellisées “accueillantes” sur Nantes Métropole
+                    </p>
+                </div>
+            </div>
+            <div class="column is-size-2">
+                <p>
+                    Par ailleurs, de nombreuses entreprises mènent des actions en faveur d’un meilleur accès à l’emploi
+                    même si ce n’est pas leur finalité première. C’est le cas en particulier de celles labellisées
+                    « entreprises accueillantes » par Nantes Métropole.
+                </p>
+            </div>
+        </div>
+        <div class="min-full-height"></div>
+
+        <scroll-scene scroll-figure="carte-entreprises" scroll-type="map" scroll-map-name="entreprises"
+                      class="stick-to-top stick-to-title">
+            <div class="columns">
+                <div class="column"></div>
+                <div class="column is-size-2 has-background-white">
+                    <figure id="carte-entreprises" class="full-height with-title"></figure>
+                </div>
+            </div>
+        </scroll-scene>
+        <div class="min-full-height"></div>
     </section>
 </scroll-scene>
 

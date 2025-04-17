@@ -285,6 +285,11 @@ Chaque configuration est un objet contenant :
 - zoom : niveau de zoom par défaut (6 est le niveau nécessaire pour afficher toute la France Métropolitaine)
  */
 const mapConfigurations = {
+    entreprises: {
+        layers: [mapLayers.osm],
+        coordinates: [47.22, -1.56],
+        zoom: 12,
+    },
 };
 
 /*

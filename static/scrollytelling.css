@@ -408,6 +408,12 @@ Sticky elements
         z-index: 98;
     }
 
+    &.sticky-stack {
+        top: calc(var(--header-height));
+        padding-top: 20px;
+        z-index: 98;
+    }
+
     &.no-header {
         top: 0;
     }
@@ -434,6 +440,10 @@ scroll-scene {
 .min-full-height {
     min-height: calc(100vh - var(--header-height));
 
+    &.with-title {
+        min-height: calc(100vh - var(--header-height) - (3 * 1.8rem * 1.5));
+    }
+
     &.no-header {
         min-height: 100vh;
     }
@@ -447,12 +457,12 @@ scroll-scene {
     }
 }
 
-.min-full-height-with-title {
-    min-height: calc(100vh - var(--header-height) - (3 * 1.8rem * 1.5));
-}
-
 .full-height {
     height: calc(100vh - var(--header-height));
+
+    &.with-title {
+        height: calc(100vh - var(--header-height) - (3 * 1.8rem * 1.5));
+    }
 
     &.no-header {
         height: 100vh;

@@ -411,6 +411,31 @@ function stickyAnchors() {
     }
 }
 
+function stickyStacks() {
+    let stickyStackElements = document.getElementsByClassName('sticky-stack');
+
+    for (let element of stickyStackElements) {
+        let neighbour = findUpNeighborWithClass(element, 'sticky-stack');
+        if (!(neighbour === null)) {
+            let top = neighbour.style.getPropertyValue('top');
+            top = top.slice(0, -1);
+            top = top + ' + ' + neighbour.clientHeight + 'px)';
+            element.style.setProperty('top', top);
+        }
+    }
+}
+
+function findUpNeighborWithClass(element, className) {
+    while (true) {
+        if (element.previousElementSibling === null)
+            return null;
+        else
+            element = element.previousElementSibling;
+        if (element.classList.contains(className))
+            return element;
+    }
+}
+
 function findUpNeighborOrParentWithClass(baseElement, classToFind) {
     // Pour chaque élément
     let findy;
@@ -432,6 +457,7 @@ function findUpNeighborOrParentWithClass(baseElement, classToFind) {
 function stickyElements() {
     setTimeout(stickyTitles, 100);
     setTimeout(stickyAnchors, 150);
+    setTimeout(stickyStacks, 200);
 }
 
 function resizeCharts() {
