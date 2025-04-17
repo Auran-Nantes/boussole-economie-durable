@@ -36,6 +36,16 @@ const data = {
             emploiSecteur4National: 105,
         },
     ],
+    qpv: [
+        [
+            "Secteur",
+            "Taux d’emploi\ndes 15-64 ans en 2021",
+            "Taux de création d’établissements\nentre 2017 et 2023",
+            "Part d’entreprises individuelles\ndans les créations d’entreprises en 2023"
+        ],
+        ["QPV", 55, 74, 88],
+        ["Nantes Métropole", 67, 43, 74],
+    ],
 };
 /*
 Répertoire des configurations de graphiques, au format Apache Echarts
@@ -87,6 +97,7 @@ const chartsConfigurations = {
             },
             textStyle: {
                 fontSize: 14,
+                fontFamily: "Poppins",
             },
         },
     emploiSalarieSecteurs:
@@ -238,6 +249,64 @@ const chartsConfigurations = {
             ],
             textStyle: {
                 fontSize: 14,
+                fontFamily: "Poppins",
+            },
+        },
+    qpv:
+        {
+            grid: {},
+            legend: {},
+            dataset: {
+                source: data.qpv,
+            },
+            xAxis: {
+                type: "category",
+                axisLabel: {
+                    interval: 0,
+                    width: "auto",
+                    overflow: "break",
+                }
+            },
+            yAxis: {},
+            series: [
+                {
+                    type: "bar",
+                    seriesLayoutBy: "row",
+                    itemStyle: {borderRadius: [30, 30, 0, 0]},
+                    label: {
+                        show: true,
+                        position: "top",
+                        color: "inherit",
+                        fontSize: 18,
+                        fontWeight: "bold",
+                        formatter: function (params) {
+                            console.log(params.value);
+                            return "+" + params.value[params.seriesIndex + 1] + "%";
+                        },
+                    },
+                },
+                {
+                    type: "bar",
+                    seriesLayoutBy: "row",
+                    itemStyle: {borderRadius: [30, 30, 0, 0]},
+                    label: {
+                        show: true,
+                        position: "top",
+                        color: "inherit",
+                        fontSize: 18,
+                        fontWeight: "bold",
+                        formatter: function (params) {
+                            console.log(params.value);
+                            return "+" + params.value[params.seriesIndex + 1] + "%";
+                        },
+                    },
+                    barGap: "-30%",
+                },
+            ],
+            color: ["#1064B388", "#D5821288"],
+            textStyle: {
+                fontSize: 14,
+                fontFamily: "Poppins",
             },
         },
 };

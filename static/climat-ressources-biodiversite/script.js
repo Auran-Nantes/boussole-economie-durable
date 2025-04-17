@@ -41,7 +41,7 @@ const chartsConfigurations = {
                 text: 'Une diminution progressive des émissions de GES',
             },
             grid: {
-                right: 100,
+                right: 105,
             },
             tooltip: {},
             legend: {
@@ -84,6 +84,7 @@ const chartsConfigurations = {
             },
             textStyle: {
                 fontSize: 14,
+                fontFamily: "Poppins",
             },
         },
     emissionsAnnuellesActEco:
@@ -92,7 +93,7 @@ const chartsConfigurations = {
                 text: 'Une diminution progressive des émissions de GES',
             },
             grid: {
-                right: 100,
+                right: 105,
             },
             tooltip: {},
             legend: {
@@ -137,7 +138,7 @@ const chartsConfigurations = {
                         show: true,
                         formatter: '{a}',
                         color: 'inherit',
-                        width: 95,
+                        width: 100,
                         overflow: 'break',
                     },
                 },
@@ -154,6 +155,7 @@ const chartsConfigurations = {
             },
             textStyle: {
                 fontSize: 14,
+                fontFamily: "Poppins",
             },
         },
     emissionsSousSecteurs:
@@ -282,6 +284,7 @@ const chartsConfigurations = {
             },
             textStyle: {
                 fontSize: 14,
+                fontFamily: "Poppins",
             },
         },
     emissionsSousSecteursEmphase:
@@ -374,6 +377,7 @@ const chartsConfigurations = {
             },
             textStyle: {
                 fontSize: 14,
+                fontFamily: "Poppins",
             },
         },
 };
@@ -510,12 +514,6 @@ Fonctions custom utilisées en paramètres des librairies de graphiques ou de ca
 
 function label_sous_secteurs(params) {
     return new Intl.NumberFormat().format(params.data[params.dimensionNames[params.encode.y[0]]]);
-}
-
-function label_sous_secteurs_layout(params) {
-    if (params.dataIndex === 0) {
-        return;
-    }
 }
 
 function style_icu(feature) {
