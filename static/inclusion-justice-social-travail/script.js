@@ -22,6 +22,8 @@ const data = {
             emploiSecteur3National: 100,
             emploiSecteur4: 100,
             emploiSecteur4National: 100,
+            chomageNM: 8,
+            chomageNational: 10,
         },
         {
             annee: '2023',
@@ -34,18 +36,21 @@ const data = {
             emploiSecteur3National: 120,
             emploiSecteur4: 95,
             emploiSecteur4National: 105,
+            chomageNM: 5.5,
+            chomageNational: 7.4,
         },
     ],
-    qpv: [
+    qpv:
         [
-            "Secteur",
-            "Taux d’emploi\ndes 15-64 ans en 2021",
-            "Taux de création d’établissements\nentre 2017 et 2023",
-            "Part d’entreprises individuelles\ndans les créations d’entreprises en 2023"
+            [
+                "Secteur",
+                "Taux d’emploi\ndes 15-64 ans en 2021",
+                "Taux de création d’établissements\nentre 2017 et 2023",
+                "Part d’entreprises individuelles\ndans les créations d’entreprises en 2023"
+            ],
+            ["QPV", 55, 74, 88],
+            ["Nantes Métropole", 67, 43, 74],
         ],
-        ["QPV", 55, 74, 88],
-        ["Nantes Métropole", 67, 43, 74],
-    ],
 };
 /*
 Répertoire des configurations de graphiques, au format Apache Echarts
@@ -76,13 +81,6 @@ const chartsConfigurations = {
                         y: 'emploiTotal',
                     },
                     color: colors.primary1,
-                    endLabel: {
-                        show: false,
-                        formatter: '{a}',
-                        color: 'inherit',
-                        width: '70',
-                        overflow: 'break',
-                    },
                 },
             ],
             xAxis: {
@@ -246,6 +244,77 @@ const chartsConfigurations = {
                 {gridIndex: 1, type: 'value', min: 70, max: 130, name: 'Emploi secteur 2'},
                 {gridIndex: 2, type: 'value', min: 70, max: 130, name: 'Emploi secteur 3'},
                 {gridIndex: 3, type: 'value', min: 70, max: 130, name: 'Emploi secteur 4'},
+            ],
+            textStyle: {
+                fontSize: 14,
+                fontFamily: "Poppins",
+            },
+        },
+    chomageNM:
+        {
+            title: {
+                text: 'Évolution de l’emploi',
+            },
+            grid: {},
+            tooltip: {},
+            legend: {
+                top: 'bottom',
+            },
+            dataset: {
+                dimensions: ['annee', 'emploiTotal', 'chomageNM', 'chomageNational'],
+                source: data.emploiSalarieNM,
+            },
+            series: [
+                {
+                    name: 'Emploi salarié NM',
+                    type: 'line',
+                    smooth: true,
+                    smoothMonotone: 'x',
+                    encode: {
+                        x: 'annee',
+                        y: 'emploiTotal',
+                    },
+                    color: colors.primary1,
+                },
+                {
+                    name: 'Taux de chômage NM',
+                    type: 'line',
+                    smooth: true,
+                    smoothMonotone: 'x',
+                    yAxisIndex: 1,
+                    encode: {
+                        x: 'annee',
+                        y: 'chomageNM',
+                    },
+                    color: colors.primary2,
+                },
+                {
+                    name: 'Taux de chômage France',
+                    type: 'line',
+                    smooth: true,
+                    smoothMonotone: 'x',
+                    yAxisIndex: 1,
+                    encode: {
+                        x: 'annee',
+                        y: 'chomageNational',
+                    },
+                    color: colors.primary2,
+                    lineStyle: {
+                        type: 'dotted',
+                    },
+                },
+            ],
+            xAxis: {
+                type: 'time',
+                name: 'Année',
+                min: '2010',
+                max: '2023',
+                nameLocation: 'middle',
+                nameGap: 25,
+            },
+            yAxis: [
+                {type: 'value', name: 'Emploi'},
+                {type: 'value', name: 'Taux de chômage', position: 'right', alignTicks: true}, // alignTicks aligne les lignes, sinon axisLine: {show = false} pour les désactiver
             ],
             textStyle: {
                 fontSize: 14,
