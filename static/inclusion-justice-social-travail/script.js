@@ -657,10 +657,9 @@ const chartsConfigurations = {
                         fontSize: 18,
                         fontWeight: "bold",
                         formatter: function (params) {
-                            console.log(params.value);
                             if (params.value[0] === "Taux de création d’établissements\nentre 2017 et 2023")
                                 return "+" + params.value[params.seriesIndex + 1] + "%";
-                            return params.value[params.seriesIndex + 1];
+                            return params.value[params.seriesIndex + 1] + "%";
                         },
                     },
                 },
@@ -678,10 +677,9 @@ const chartsConfigurations = {
                         fontSize: 18,
                         fontWeight: "bold",
                         formatter: function (params) {
-                            console.log(params.value);
                             if (params.value[0] === "Taux de création d’établissements\nentre 2017 et 2023")
                                 return "+" + params.value[params.seriesIndex + 1] + "%";
-                            return params.value[params.seriesIndex + 1];
+                            return params.value[params.seriesIndex + 1] + "%";
                         },
                     },
                     barGap: "-30%",
