@@ -328,7 +328,7 @@ const chartsConfigurations = {
     emploiSalarieSecteurs:
         {
             title: {
-                text: 'Évolution de l’emploi par secteur',
+                text: 'Évolution de l’emploi par secteur. Base 100 : 2006',
             },
             grid: [
                 {right: '55%', bottom: '55%'},
@@ -360,104 +360,168 @@ const chartsConfigurations = {
                     xAxisIndex: 0,
                     yAxisIndex: 0,
                     type: 'line',
-                    smooth: true,
-                    smoothMonotone: 'x',
                     encode: {
                         x: 'annee',
                         y: 'emploichrnm',
                     },
                     color: colors.primary1,
+                    markLine: {
+                        symbol: 'none',
+                        label: {
+                            show: false,
+                        },
+                        lineStyle: {
+                            color: colors.primary3,
+                            width: 3,
+                            type: 'solid',
+                            opacity: 0.6,
+                        },
+                        data: [
+                            {
+                                yAxis: 100,
+                            }
+                        ]
+                    },
                 },
                 {
                     name: 'Commerce / Hébergmt et Rest. FR',
                     xAxisIndex: 0,
                     yAxisIndex: 0,
                     type: 'line',
-                    smooth: true,
-                    smoothMonotone: 'x',
                     encode: {
                         x: 'annee',
                         y: 'emploichrfr',
                     },
                     color: colors.primary2,
+                    lineStyle: {
+                        type: 'dotted',
+                    },
                 },
                 {
                     name: 'Construction NM',
                     xAxisIndex: 1,
                     yAxisIndex: 1,
                     type: 'line',
-                    smooth: true,
-                    smoothMonotone: 'x',
                     encode: {
                         x: 'annee',
                         y: 'emploiconstructionnm',
                     },
                     color: colors.primary1,
+                    markLine: {
+                        symbol: 'none',
+                        label: {
+                            show: false,
+                        },
+                        lineStyle: {
+                            color: colors.primary3,
+                            width: 3,
+                            type: 'solid',
+                            opacity: 0.6,
+                        },
+                        data: [
+                            {
+                                yAxis: 100,
+                            }
+                        ]
+                    },
                 },
                 {
                     name: 'Construction FR',
                     xAxisIndex: 1,
                     yAxisIndex: 1,
                     type: 'line',
-                    smooth: true,
-                    smoothMonotone: 'x',
                     encode: {
                         x: 'annee',
                         y: 'emploiconstructionfr',
                     },
                     color: colors.primary2,
+                    lineStyle: {
+                        type: 'dotted',
+                    },
                 },
                 {
                     name: 'Autres services hors interim NM',
                     xAxisIndex: 2,
                     yAxisIndex: 2,
                     type: 'line',
-                    smooth: true,
-                    smoothMonotone: 'x',
                     encode: {
                         x: 'annee',
                         y: 'emploiautresservicesnm',
                     },
                     color: colors.primary1,
+                    markLine: {
+                        symbol: 'none',
+                        label: {
+                            show: false,
+                        },
+                        lineStyle: {
+                            color: colors.primary3,
+                            width: 3,
+                            type: 'solid',
+                            opacity: 0.6,
+                        },
+                        data: [
+                            {
+                                yAxis: 100,
+                            }
+                        ]
+                    },
                 },
                 {
                     name: 'Autres services hors interim FR',
                     xAxisIndex: 2,
                     yAxisIndex: 2,
                     type: 'line',
-                    smooth: true,
-                    smoothMonotone: 'x',
                     encode: {
                         x: 'annee',
                         y: 'emploiautresservicesfr',
                     },
                     color: colors.primary2,
+                    lineStyle: {
+                        type: 'dotted',
+                    },
                 },
                 {
                     name: 'Industrie (et agriculture) NM',
                     xAxisIndex: 3,
                     yAxisIndex: 3,
                     type: 'line',
-                    smooth: true,
-                    smoothMonotone: 'x',
                     encode: {
                         x: 'annee',
                         y: 'emploiindustrienm',
                     },
                     color: colors.primary1,
+                    markLine: {
+                        symbol: 'none',
+                        label: {
+                            show: false,
+                        },
+                        lineStyle: {
+                            color: colors.primary3,
+                            width: 3,
+                            type: 'solid',
+                            opacity: 0.6,
+                        },
+                        data: [
+                            {
+                                yAxis: 100,
+                            }
+                        ]
+                    },
                 },
                 {
                     name: 'Industrie (et agriculture) FR',
                     xAxisIndex: 3,
                     yAxisIndex: 3,
                     type: 'line',
-                    smooth: true,
-                    smoothMonotone: 'x',
                     encode: {
                         x: 'annee',
                         y: 'emploiindustriefr',
                     },
                     color: colors.primary2,
+                    lineStyle: {
+                        type: 'dotted',
+                    },
                 },
             ],
             xAxis: [
@@ -467,10 +531,24 @@ const chartsConfigurations = {
                 {gridIndex: 3, type: 'time', min: '2006', max: '2023'},
             ],
             yAxis: [
-                {gridIndex: 0, type: 'value', min: 80, max: 160, name: 'Emploi CHR'},
-                {gridIndex: 1, type: 'value', min: 80, max: 160, name: 'Emploi Construction'},
-                {gridIndex: 2, type: 'value', min: 80, max: 160, name: 'Emploi\nAutres services'},
-                {gridIndex: 3, type: 'value', min: 80, max: 160, name: 'Emploi Industrie'},
+                {
+                    gridIndex: 0,
+                    type: 'value',
+                    min: 80,
+                    max: 160,
+                    name: 'Commerce, Hôtellerie, Restauration',
+                    nameTextStyle: {align: 'left'},
+                },
+                {gridIndex: 1, type: 'value', min: 80, max: 160, name: 'Construction', nameTextStyle: {align: 'left'}},
+                {
+                    gridIndex: 2,
+                    type: 'value',
+                    min: 80,
+                    max: 160,
+                    name: 'Autres services',
+                    nameTextStyle: {align: 'left'}
+                },
+                {gridIndex: 3, type: 'value', min: 80, max: 160, name: 'Industrie', nameTextStyle: {align: 'left'}},
             ],
             textStyle: {
                 fontSize: 14,
