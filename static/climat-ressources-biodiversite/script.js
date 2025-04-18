@@ -8,6 +8,9 @@ La donnée est chargée avec en tête les exports de PostgreSQL :
 - Une ligne est un objet, les clés étant les noms des colonnes
 - Il doit obligatoirement y avoir une colonne "label" : il sert à donner les noms des valeurs / points
 - Les noms des autres colonnes sont ceux des séries de données
+Exemple de requête SQL :
+select json_agg(part2_sect1_emploi)
+from scrollyboussole.part2_sect1_emploi
  */
 const data = {
     emissionsAnnuellesNM: [
