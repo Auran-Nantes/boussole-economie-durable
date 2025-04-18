@@ -648,7 +648,7 @@ const chartsConfigurations = {
                     seriesLayoutBy: "row",
                     itemStyle: {
                         borderRadius: [30, 30, 0, 0],
-                        // opacity: 0.6,
+                        opacity: 0.6,
                     },
                     label: {
                         show: true,
@@ -658,7 +658,9 @@ const chartsConfigurations = {
                         fontWeight: "bold",
                         formatter: function (params) {
                             console.log(params.value);
-                            return "+" + params.value[params.seriesIndex + 1] + "%";
+                            if (params.value[0] === "Taux de création d’établissements\nentre 2017 et 2023")
+                                return "+" + params.value[params.seriesIndex + 1] + "%";
+                            return params.value[params.seriesIndex + 1];
                         },
                     },
                 },
@@ -667,7 +669,7 @@ const chartsConfigurations = {
                     seriesLayoutBy: "row",
                     itemStyle: {
                         borderRadius: [30, 30, 0, 0],
-                        // opacity: 0.6,
+                        opacity: 0.6,
                     },
                     label: {
                         show: true,
@@ -677,7 +679,9 @@ const chartsConfigurations = {
                         fontWeight: "bold",
                         formatter: function (params) {
                             console.log(params.value);
-                            return "+" + params.value[params.seriesIndex + 1] + "%";
+                            if (params.value[0] === "Taux de création d’établissements\nentre 2017 et 2023")
+                                return "+" + params.value[params.seriesIndex + 1] + "%";
+                            return params.value[params.seriesIndex + 1];
                         },
                     },
                     barGap: "-30%",
