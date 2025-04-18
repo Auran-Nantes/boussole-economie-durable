@@ -646,7 +646,10 @@ const chartsConfigurations = {
                 {
                     type: "bar",
                     seriesLayoutBy: "row",
-                    itemStyle: {borderRadius: [30, 30, 0, 0]},
+                    itemStyle: {
+                        borderRadius: [30, 30, 0, 0],
+                        // opacity: 0.6,
+                    },
                     label: {
                         show: true,
                         position: "top",
@@ -662,7 +665,10 @@ const chartsConfigurations = {
                 {
                     type: "bar",
                     seriesLayoutBy: "row",
-                    itemStyle: {borderRadius: [30, 30, 0, 0]},
+                    itemStyle: {
+                        borderRadius: [30, 30, 0, 0],
+                        // opacity: 0.6,
+                    },
                     label: {
                         show: true,
                         position: "top",
@@ -677,7 +683,7 @@ const chartsConfigurations = {
                     barGap: "-30%",
                 },
             ],
-            color: ["#1064B388", "#D5821288"],
+            color: [colors.primary2, colors.primary1],
             textStyle: {
                 fontSize: 14,
                 fontFamily: "Poppins",
