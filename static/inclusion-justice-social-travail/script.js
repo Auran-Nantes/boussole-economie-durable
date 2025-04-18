@@ -278,6 +278,12 @@ const data = {
             ["QPV", 55, 74, 88],
             ["Nantes Métropole", 67, 43, 74],
         ],
+    tauxEmploi:
+        [
+            ["Statut", "15-64 ans", "15-24 ans", "25-54 ans", "55-64 ans", "Hommes", "Femmes"],
+            ["Emploi", 67, 32, 70, 58, 69, 65],
+            ["Chômage", 33, 68, 30, 42, 31, 35],
+        ]
 };
 /*
 Répertoire des configurations de graphiques, au format Apache Echarts
@@ -690,6 +696,87 @@ const chartsConfigurations = {
                 fontSize: 14,
                 fontFamily: "Poppins",
             },
+        },
+    tauxEmploi:
+        {
+            dataset: {
+                source: data.tauxEmploi,
+            },
+            series: [
+                {
+                    type: "bar",
+                    seriesLayoutBy: "row",
+                },
+                {
+                    type: "bar",
+                    seriesLayoutBy: "row",
+                },
+            ],
+            xAxis: {
+                type: "category",
+                data: [
+                    {value: "15-64 ans"},
+                ]
+            },
+            yAxis: {},
+            color: [colors.primary1, colors.primary2],
+            grid: {},
+            legend: {},
+        },
+    tauxEmploiAge:
+        {
+            dataset: {
+                source: data.tauxEmploi,
+            },
+            series: [
+                {
+                    type: "bar",
+                    seriesLayoutBy: "row",
+                },
+                {
+                    type: "bar",
+                    seriesLayoutBy: "row",
+                },
+            ],
+            xAxis: {
+                type: "category",
+                data: [
+                    {value: "15-24 ans"},
+                    {value: "25-54 ans"},
+                    {value: "55-64 ans"},
+                ]
+            },
+            yAxis: {},
+            color: [colors.primary1, colors.primary2],
+            grid: {},
+            legend: {},
+        },
+    tauxEmploiGenre:
+        {
+            dataset: {
+                source: data.tauxEmploi,
+            },
+            series: [
+                {
+                    type: "bar",
+                    seriesLayoutBy: "row",
+                },
+                {
+                    type: "bar",
+                    seriesLayoutBy: "row",
+                },
+            ],
+            xAxis: {
+                type: "category",
+                data: [
+                    {value: "Hommes"},
+                    {value: "Femmes"},
+                ]
+            },
+            yAxis: {},
+            color: [colors.primary1, colors.primary2],
+            grid: {},
+            legend: {},
         },
 };
 /*
