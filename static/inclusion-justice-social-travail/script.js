@@ -267,6 +267,30 @@ const data = {
             "chomagefr": null
         }
     ],
+    chomage: [
+        {
+            annee: "2006",
+            chomagenm: null,
+            chomagefr: null,
+            chomageparis: null,
+            chomagelyon: null,
+            chomagemarseille: null,
+            chomagebordeaux: null,
+            chomagetoulouse: null,
+            chomagestrasbourg: null
+        },
+        {
+            annee: "2023",
+            chomagenm: null,
+            chomagefr: null,
+            chomageparis: null,
+            chomagelyon: null,
+            chomagemarseille: null,
+            chomagebordeaux: null,
+            chomagetoulouse: null,
+            chomagestrasbourg: null
+        },
+    ],
     qpv:
         [
             [
@@ -626,6 +650,147 @@ const chartsConfigurations = {
             yAxis: [
                 {type: 'value', name: 'Emploi'},
                 {type: 'value', name: 'Taux de chômage', position: 'right', alignTicks: true}, // alignTicks aligne les lignes, sinon axisLine: {show = false} pour les désactiver
+            ],
+            textStyle: {
+                fontSize: 14,
+                fontFamily: "Poppins",
+            },
+        },
+    chomageComparaison:
+        {
+            title: {
+                text: 'Évolution de l’emploi',
+            },
+            grid: {},
+            tooltip: {},
+            legend: {
+                top: 'bottom',
+            },
+            dataset: {
+                dimensions: [
+                    'annee',
+                    'chomagenm',
+                    'chomagefr',
+                    "chomageparis",
+                    "chomagelyon",
+                    "chomagemarseille",
+                    "chomagebordeaux",
+                    "chomagetoulouse",
+                    "chomagestrasbourg",
+                ],
+                source: data.chomage,
+            },
+            series: [
+                {
+                    name: 'Nantes Métropole',
+                    type: 'line',
+                    smooth: true,
+                    smoothMonotone: 'x',
+                    encode: {
+                        x: 'annee',
+                        y: 'chomagenm',
+                    },
+                },
+                {
+                    name: 'France',
+                    type: 'line',
+                    smooth: true,
+                    smoothMonotone: 'x',
+                    encode: {
+                        x: 'annee',
+                        y: 'chomagefr',
+                    },
+                    lineStyle: {
+                        type: 'dotted',
+                    },
+                },
+                {
+                    name: 'Paris',
+                    type: 'line',
+                    smooth: true,
+                    smoothMonotone: 'x',
+                    encode: {
+                        x: 'annee',
+                        y: 'chomageparis',
+                    },
+                    lineStyle: {
+                        type: 'dotted',
+                    },
+                },
+                {
+                    name: 'Lyon',
+                    type: 'line',
+                    smooth: true,
+                    smoothMonotone: 'x',
+                    encode: {
+                        x: 'annee',
+                        y: 'chomagelyon',
+                    },
+                    lineStyle: {
+                        type: 'dotted',
+                    },
+                },
+                {
+                    name: 'Marseille',
+                    type: 'line',
+                    smooth: true,
+                    smoothMonotone: 'x',
+                    encode: {
+                        x: 'annee',
+                        y: 'chomagemarseille',
+                    },
+                    lineStyle: {
+                        type: 'dotted',
+                    },
+                },
+                {
+                    name: 'Bordeaux',
+                    type: 'line',
+                    smooth: true,
+                    smoothMonotone: 'x',
+                    encode: {
+                        x: 'annee',
+                        y: 'chomagebordeaux',
+                    },
+                    lineStyle: {
+                        type: 'dotted',
+                    },
+                },
+                {
+                    name: 'Toulouse',
+                    type: 'line',
+                    smooth: true,
+                    smoothMonotone: 'x',
+                    encode: {
+                        x: 'annee',
+                        y: 'chomagetoulouse',
+                    },
+                    lineStyle: {
+                        type: 'dotted',
+                    },
+                },
+                {
+                    name: 'Strasbourg',
+                    type: 'line',
+                    smooth: true,
+                    smoothMonotone: 'x',
+                    encode: {
+                        x: 'annee',
+                        y: 'chomagestrasbourg',
+                    },
+                    lineStyle: {
+                        type: 'dotted',
+                    },
+                },
+            ],
+            xAxis: {
+                type: 'time',
+                name: 'Année',
+                min: '2006',
+                max: '2023',
+            },
+            yAxis: [
+                {type: 'value', name: 'Taux de chômage'},
             ],
             textStyle: {
                 fontSize: 14,
