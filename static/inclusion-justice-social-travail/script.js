@@ -402,7 +402,7 @@ const chartsConfigurations = {
                         },
                         lineStyle: {
                             color: "#555555",
-                            width: 3,
+                            width: 2,
                             type: 'solid',
                             opacity: 0.6,
                         },
@@ -443,8 +443,8 @@ const chartsConfigurations = {
                             show: false,
                         },
                         lineStyle: {
-                            color: colors.primary3,
-                            width: 3,
+                            color: "#555555",
+                            width: 2,
                             type: 'solid',
                             opacity: 0.6,
                         },
@@ -485,8 +485,8 @@ const chartsConfigurations = {
                             show: false,
                         },
                         lineStyle: {
-                            color: colors.primary3,
-                            width: 3,
+                            color: "#555555",
+                            width: 2,
                             type: 'solid',
                             opacity: 0.6,
                         },
@@ -527,8 +527,8 @@ const chartsConfigurations = {
                             show: false,
                         },
                         lineStyle: {
-                            color: colors.primary3,
-                            width: 3,
+                            color: "#555555",
+                            width: 2,
                             type: 'solid',
                             opacity: 0.6,
                         },
@@ -856,7 +856,7 @@ const chartsConfigurations = {
                     barGap: "-30%",
                 },
             ],
-            color: [colors.primary2, colors.primary1],
+            color: [colors.secondary1, colors.primary1],
             textStyle: {
                 fontSize: 14,
                 fontFamily: "Poppins",
@@ -884,7 +884,7 @@ const chartsConfigurations = {
                 ]
             },
             yAxis: {},
-            color: [colors.primary1, colors.primary2],
+            color: [colors.primary1, colors.secondary2],
             grid: {},
             legend: {},
         },
@@ -912,7 +912,7 @@ const chartsConfigurations = {
                 ]
             },
             yAxis: {},
-            color: [colors.primary1, colors.primary2],
+            color: [colors.primary1, colors.secondary2],
             grid: {},
             legend: {},
         },
@@ -939,7 +939,7 @@ const chartsConfigurations = {
                 ]
             },
             yAxis: {},
-            color: [colors.primary1, colors.primary2],
+            color: [colors.primary1, colors.secondary2],
             grid: {},
             legend: {},
         },

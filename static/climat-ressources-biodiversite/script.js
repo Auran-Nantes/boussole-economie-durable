@@ -135,7 +135,7 @@ const chartsConfigurations = {
                         x: 'annee',
                         y: 'actEco',
                     },
-                    color: colors.primary2,
+                    color: colors.secondary1,
                     areaStyle: {},
                     endLabel: {
                         show: true,
@@ -322,7 +322,7 @@ const chartsConfigurations = {
                 {
                     name: 'Industrie',
                     type: 'line',
-                    color: colors.primary2,
+                    color: colors.secondary1,
                     encode: {
                         x: 'annee',
                         y: 'industrie',

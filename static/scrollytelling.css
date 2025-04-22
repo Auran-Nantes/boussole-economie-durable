@@ -361,6 +361,11 @@ p {
     color: var(--color-text-white);
     font-weight: var(--font-size-bold);
     padding: 0 5px;
+
+    &.is-lighter {
+        background-color: var(--section-color-lighter);
+        color: var(--color-text)
+    }
 }
 
 ul {
