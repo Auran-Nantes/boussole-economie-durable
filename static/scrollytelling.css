@@ -490,3 +490,33 @@ scroll-scene {
 a {
     color: var(--color-primary-1);
 }
+
+
+/* ------------------------
+Tables
+------------------------ */
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+
+    tr:nth-child(even) {
+        background-color: var(--section-color-lighter);
+    }
+
+    thead {
+
+        tr {
+            background-color: var(--section-color);
+            color: var(--color-text-white)
+        }
+        tr:nth-child(even) {
+            background-color: var(--section-color);
+        }
+    }
+
+    th, td {
+        padding: 3px 10px;
+        text-align: center;
+    }
+}
