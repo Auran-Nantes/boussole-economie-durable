@@ -394,14 +394,14 @@ const chartsConfigurations = {
                         x: 'annee',
                         y: 'emploichrnm',
                     },
-                    color: colors.primary1,
+                    color: colors.secondary1,
                     markLine: {
                         symbol: 'none',
                         label: {
                             show: false,
                         },
                         lineStyle: {
-                            color: colors.primary3,
+                            color: "#555555",
                             width: 3,
                             type: 'solid',
                             opacity: 0.6,
@@ -422,7 +422,7 @@ const chartsConfigurations = {
                         x: 'annee',
                         y: 'emploichrfr',
                     },
-                    color: colors.primary2,
+                    color: colors.secondary1lighter,
                     lineStyle: {
                         type: 'dotted',
                     },
@@ -436,7 +436,7 @@ const chartsConfigurations = {
                         x: 'annee',
                         y: 'emploiconstructionnm',
                     },
-                    color: colors.primary1,
+                    color: colors.secondary1,
                     markLine: {
                         symbol: 'none',
                         label: {
@@ -464,7 +464,7 @@ const chartsConfigurations = {
                         x: 'annee',
                         y: 'emploiconstructionfr',
                     },
-                    color: colors.primary2,
+                    color: colors.secondary1lighter,
                     lineStyle: {
                         type: 'dotted',
                     },
@@ -478,7 +478,7 @@ const chartsConfigurations = {
                         x: 'annee',
                         y: 'emploiautresservicesnm',
                     },
-                    color: colors.primary1,
+                    color: colors.secondary1,
                     markLine: {
                         symbol: 'none',
                         label: {
@@ -506,7 +506,7 @@ const chartsConfigurations = {
                         x: 'annee',
                         y: 'emploiautresservicesfr',
                     },
-                    color: colors.primary2,
+                    color: colors.secondary1lighter,
                     lineStyle: {
                         type: 'dotted',
                     },
@@ -520,7 +520,7 @@ const chartsConfigurations = {
                         x: 'annee',
                         y: 'emploiindustrienm',
                     },
-                    color: colors.primary1,
+                    color: colors.secondary1,
                     markLine: {
                         symbol: 'none',
                         label: {
@@ -548,7 +548,7 @@ const chartsConfigurations = {
                         x: 'annee',
                         y: 'emploiindustriefr',
                     },
-                    color: colors.primary2,
+                    color: colors.secondary1lighter,
                     lineStyle: {
                         type: 'dotted',
                     },
