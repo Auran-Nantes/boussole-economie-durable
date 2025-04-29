@@ -386,6 +386,18 @@ ul {
     }
 }
 
+/* Source formatting */
+.source {
+    color: var(--color-black-light);
+    font-size: 0.7rem;
+    padding: 0 5px;
+    margin-top: 0;
+}
+
+*:has(+.source) {
+    margin-bottom: 5px;
+}
+
 
 /* ------------------------------------------
 Sticky elements
@@ -453,6 +465,14 @@ scroll-scene {
         min-height: calc(100vh - var(--header-height) - (3 * 1.8rem * 1.5));
     }
 
+    &.with-source {
+        min-height: calc(100vh - var(--header-height) - (0.7rem + 5px));
+
+        &.with-title {
+            min-height: calc(100vh - var(--header-height) - (3 * 1.8rem * 1.5) - (0.7rem + 5px));
+        }
+    }
+
     &.no-header {
         min-height: 100vh;
     }
@@ -496,6 +516,10 @@ a {
     color: var(--color-primary-1);
 }
 
+.centered {
+    text-align: center;
+}
+
 
 /* ------------------------
 Tables
@@ -515,6 +539,7 @@ table {
             background-color: var(--section-color);
             color: var(--color-text-white)
         }
+
         tr:nth-child(even) {
             background-color: var(--section-color);
         }
