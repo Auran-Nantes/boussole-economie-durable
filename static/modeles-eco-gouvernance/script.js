@@ -30,7 +30,6 @@ const chartsConfigurations = {
         title: {text: "Création d’établissements"},
         grid: {},
         tooltip: {},
-        legend: {top: "bottom"},
         dataset: {dimensions: ["annee", "creationsetab"], source: data.entreprises},
         series: [
             {
