@@ -14,8 +14,18 @@ from scrollyboussole.part2_sect1_emploi
  */
 const data = {
     entreprises: [
-        {annee: "2012", creationsetab: 6000, redressementsJudiciaire: 200, liquidationsJudiciaires: 400},
-        {annee: "2023", creationsetab: 6000, redressementsJudiciaire: 200, liquidationsJudiciaires: 400},
+        {"annee": "2012", "creationsetab": 6686, "redressements": 10, "liquidations": 10},
+        {"annee": "2013", "creationsetab": 6400, "redressements": 10, "liquidations": 10},
+        {"annee": "2014", "creationsetab": 7105, "redressements": 10, "liquidations": 10},
+        {"annee": "2015", "creationsetab": 7014, "redressements": null, "liquidations": null},
+        {"annee": "2016", "creationsetab": 7729, "redressements": null, "liquidations": null},
+        {"annee": "2017", "creationsetab": 8491, "redressements": null, "liquidations": null},
+        {"annee": "2018", "creationsetab": 9132, "redressements": null, "liquidations": null},
+        {"annee": "2019", "creationsetab": 11103, "redressements": null, "liquidations": null},
+        {"annee": "2020", "creationsetab": 11019, "redressements": null, "liquidations": null},
+        {"annee": "2021", "creationsetab": 13571, "redressements": null, "liquidations": null},
+        {"annee": "2022", "creationsetab": 12835, "redressements": null, "liquidations": null},
+        {"annee": "2023", "creationsetab": 12254, "redressements": null, "liquidations": null},
     ],
     ess: [
         {annee: "2012", emploiess: 600, emploiprivehorsess: 200, etabess: 400, etabprivehorsess: 500},
@@ -43,7 +53,7 @@ const chartsConfigurations = {
         ],
         xAxis: {type: "time", name: "Année", min: "2012", max: "2023"},
         yAxis: {type: "value"},
-        textStyle: {fontSize: 14,fontFamily: "Poppins"},
+        textStyle: {fontSize: 14, fontFamily: "Poppins"},
         color: [colors.secondary1],
     },
     defaillancesEntreprises: {
@@ -51,7 +61,7 @@ const chartsConfigurations = {
         grid: {},
         tooltip: {},
         legend: {top: "bottom"},
-        dataset: {dimensions: ["annee", "redressementsJudiciaire", "liquidationsJudiciaires"], source: data.entreprises},
+        dataset: {dimensions: ["annee", "redressements", "liquidations"], source: data.entreprises},
         series: [
             {
                 name: "Liquidations judiciaires",
@@ -60,7 +70,7 @@ const chartsConfigurations = {
                 smooth: true,
                 smoothMonotone: "x",
                 areaStyle: {},
-                encode: {x: "annee", y: "liquidationsJudiciaires"},
+                encode: {x: "annee", y: "liquidations"},
             },
             {
                 name: "Redressements judiciaires",
@@ -69,19 +79,22 @@ const chartsConfigurations = {
                 smooth: true,
                 smoothMonotone: "x",
                 areaStyle: {},
-                encode: {x: "annee", y: "redressementsJudiciaires"},
+                encode: {x: "annee", y: "redressementss"},
             },
         ],
         xAxis: {type: "time", name: "Année", min: "2012", max: "2023"},
         yAxis: {type: "value"},
-        textStyle: {fontSize: 14,fontFamily: "Poppins"},
+        textStyle: {fontSize: 14, fontFamily: "Poppins"},
         color: [colors.secondary1, colors.secondary1lighter],
     },
     ess: {
         title: {text: "L’ESS à Nantes Métropole"},
         grid: {right: 120},
         tooltip: {},
-        dataset: {dimensions: ["annee", "emploiess", "emploiprivehorsess", "etabess", "etabprivehorsess"], source: data.ess},
+        dataset: {
+            dimensions: ["annee", "emploiess", "emploiprivehorsess", "etabess", "etabprivehorsess"],
+            source: data.ess
+        },
         series: [
             {
                 name: "Emplois ESS",
@@ -118,7 +131,7 @@ const chartsConfigurations = {
         ],
         xAxis: {type: "time", name: "Année", min: "2012", max: "2023"},
         yAxis: {type: "value"},
-        textStyle: {fontSize: 14,fontFamily: "Poppins"},
+        textStyle: {fontSize: 14, fontFamily: "Poppins"},
         color: [colors.secondary2, colors.secondary2lighter, colors.primary1, colors.primary1lighter],
     },
 };
@@ -165,8 +178,7 @@ Chaque configuration est un objet contenant :
 - coordinates : coordonnées par défaut de la carte (au format WGS84)
 - zoom : niveau de zoom par défaut (6 est le niveau nécessaire pour afficher toute la France Métropolitaine)
  */
-const mapConfigurations = {
-};
+const mapConfigurations = {};
 
 /*
 HTML customs
