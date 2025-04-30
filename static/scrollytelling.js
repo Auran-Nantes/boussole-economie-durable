@@ -93,6 +93,7 @@ function scrollEvent(scrollData) {
      */
     if (scrollData['scroll-pre-hook']) runHook(scrollData['scroll-pre-hook']);
     if (scrollData['scroll-type']) scrollFigure(scrollData);
+    if (scrollData['scroll-source']) scrollSource(scrollData);
     if (scrollData['scroll-post-hook']) runHook(scrollData['scroll-post-hook']);
 }
 
@@ -376,6 +377,13 @@ async function geoJsonToLayer(geoJson, options) {
     return L.geoJson(data, options);
 }
 
+function scrollSource(scrollData) {
+    /* Change la source d’une figure après un évènement de scroll */
+    figure = document.getElementById(scrollData['scroll-figure']);
+    source = findDownNeighborWithClass(figure, 'source');
+
+    source.innerHTML = scrollData['scroll-source'];
+}
 
 function stickyTitles() {
     /*
@@ -431,6 +439,17 @@ function findUpNeighborWithClass(element, className) {
             return null;
         else
             element = element.previousElementSibling;
+        if (element.classList.contains(className))
+            return element;
+    }
+}
+
+function findDownNeighborWithClass(element, className) {
+    while (true) {
+        if (element.nextElementSibling === null)
+            return null;
+        else
+            element = element.nextElementSibling;
         if (element.classList.contains(className))
             return element;
     }
