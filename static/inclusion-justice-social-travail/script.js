@@ -2231,7 +2231,7 @@ const chartsConfigurations = {
     chomageNantes:
         {
             title: {
-                text: 'Évolution de l’emploi',
+                text: 'Évolution du taux de chômage',
             },
             grid: {},
             tooltip: {},
@@ -2239,7 +2239,7 @@ const chartsConfigurations = {
             dataset: {dimensions: ['trimestre', "nantes", "france"], source: data.chomage},
             series: [
                 {
-                    name: 'Taux de chômage Nantes',
+                    name: 'Zone d’emploi de Nantes',
                     type: 'line',
                     smooth: true,
                     smoothMonotone: 'x',
@@ -2248,14 +2248,13 @@ const chartsConfigurations = {
                     symbol: "none",
                 },
                 {
-                    name: 'Taux de chômage France',
+                    name: 'France Métropolitaine',
                     type: 'line',
                     smooth: true,
                     smoothMonotone: 'x',
                     encode: {x: 'trimestre', y: 'france'},
                     color: colors.secondary1lighter,
                     symbol: "none",
-                    lineStyle: {type: 'dotted'},
                 },
             ],
             xAxis: {
@@ -2264,7 +2263,7 @@ const chartsConfigurations = {
                 nameLocation: 'middle',
                 nameGap: 25,
             },
-            yAxis: [{type: 'value', name: 'Taux de chômage'}],
+            yAxis: [{type: 'value', name: 'Taux de chômage', max: 15}],
             textStyle: {
                 fontSize: 14,
                 fontFamily: "Poppins",
@@ -2273,7 +2272,7 @@ const chartsConfigurations = {
     chomageComparaison:
         {
             title: {
-                text: 'Évolution de l’emploi',
+                text: 'Évolution du taux de chômage',
             },
             grid: {},
             tooltip: {},
@@ -2293,7 +2292,7 @@ const chartsConfigurations = {
                     encode: {x: 'trimestre', y: 'lille'},
                     color: colors.blacklighter,
                     symbol: "none",
-                    lineStyle: {opacity: 0.5,type: 'dotted'},
+                    lineStyle: {width: 1},
                 },
                 {
                     name: 'Autre',
@@ -2303,7 +2302,7 @@ const chartsConfigurations = {
                     encode: {x: 'trimestre', y: 'strasbourg'},
                     color: colors.blacklighter,
                     symbol: "none",
-                    lineStyle: {opacity: 0.5,type: 'dotted'},
+                    lineStyle: {width: 1},
                 },
                 {
                     name: 'Autre',
@@ -2313,7 +2312,7 @@ const chartsConfigurations = {
                     encode: {x: 'trimestre', y: 'rennes'},
                     color: colors.blacklighter,
                     symbol: "none",
-                    lineStyle: {opacity: 0.5,type: 'dotted'},
+                    lineStyle: {width: 1},
                 },
                 {
                     name: 'Autre',
@@ -2323,7 +2322,7 @@ const chartsConfigurations = {
                     encode: {x: 'trimestre', y: 'bordeaux'},
                     color: colors.blacklighter,
                     symbol: "none",
-                    lineStyle: {opacity: 0.5,type: 'dotted'},
+                    lineStyle: {width: 1},
                 },
                 {
                     name: 'Autre',
@@ -2333,7 +2332,7 @@ const chartsConfigurations = {
                     encode: {x: 'trimestre', y: 'toulouse'},
                     color: colors.blacklighter,
                     symbol: "none",
-                    lineStyle: {opacity: 0.5,type: 'dotted'},
+                    lineStyle: {width: 1},
                 },
                 {
                     name: 'Autre',
@@ -2343,7 +2342,7 @@ const chartsConfigurations = {
                     encode: {x: 'trimestre', y: 'lyon'},
                     color: colors.blacklighter,
                     symbol: "none",
-                    lineStyle: {opacity: 0.5,type: 'dotted'},
+                    lineStyle: {width: 1},
                 },
                 {
                     name: 'Autre',
@@ -2353,25 +2352,17 @@ const chartsConfigurations = {
                     encode: {x: 'trimestre', y: 'marseille'},
                     color: colors.blacklighter,
                     symbol: "none",
-                    lineStyle: {opacity: 0.5,type: 'dotted'},
+                    lineStyle: {width: 1},
                 },
                 {
-                    name: 'Taux de chômage Nantes',
+                    name: 'Zone d’emploi de Nantes',
                     type: 'line',
                     smooth: true,
                     smoothMonotone: 'x',
                     encode: {x: 'trimestre', y: 'nantes'},
                     color: colors.secondary1,
                     symbol: "none",
-                },
-                {
-                    name: 'Taux de chômage France',
-                    type: 'line',
-                    smooth: true,
-                    smoothMonotone: 'x',
-                    encode: {x: 'trimestre', y: 'france'},
-                    color: colors.secondary1lighter,
-                    symbol: "none",
+                    lineStyle: {width: 3},
                 },
             ],
             xAxis: {
@@ -2380,7 +2371,7 @@ const chartsConfigurations = {
                 nameLocation: 'middle',
                 nameGap: 25,
             },
-            yAxis: [{type: 'value', name: 'Taux de chômage'}],
+            yAxis: [{type: 'value', name: 'Taux de chômage', max: 15}],
             textStyle: {
                 fontSize: 14,
                 fontFamily: "Poppins",
