@@ -529,11 +529,11 @@ const chartsConfigurations = {
                 top: 'bottom',
                 selectedMode: false,
                 data: [
-                    {name: 'Commerce / Hébergmt et Rest. Nantes'},
+                    {name: 'Commerce / Hébergmt et Rest. NM'},
                     {name: 'Commerce / Hébergmt et Rest. FR'},
                 ],
                 formatter: function (name) {
-                    if (name === 'Commerce / Hébergmt et Rest. Nantes') return 'Zone d’emploi de Nantes';
+                    if (name === 'Commerce / Hébergmt et Rest. NM') return 'Nantes Métropole';
                     if (name === 'Commerce / Hébergmt et Rest. FR') return 'National';
                     return 'Erreur';
                 },
@@ -554,7 +554,7 @@ const chartsConfigurations = {
             },
             series: [
                 {
-                    name: 'Commerce / Hébergmt et Rest. Nantes',
+                    name: 'Commerce / Hébergmt et Rest. NM',
                     xAxisIndex: 0,
                     yAxisIndex: 0,
                     type: 'line',
@@ -582,7 +582,7 @@ const chartsConfigurations = {
                     lineStyle: {type: 'dotted'},
                 },
                 {
-                    name: 'Construction Nantes',
+                    name: 'Construction NM',
                     xAxisIndex: 1,
                     yAxisIndex: 1,
                     type: 'line',
@@ -610,7 +610,7 @@ const chartsConfigurations = {
                     lineStyle: {type: 'dotted'},
                 },
                 {
-                    name: 'Autres services hors interim Nantes',
+                    name: 'Autres services hors interim NM',
                     xAxisIndex: 2,
                     yAxisIndex: 2,
                     type: 'line',
