@@ -486,6 +486,14 @@ scroll-scene {
     }
 }
 
+.min-quarter-height {
+    min-height: calc(25vh - var(--header-height));
+
+    &.no-header {
+        min-height: 25vh;
+    }
+}
+
 .full-height {
     height: calc(100vh - var(--header-height));
 
@@ -501,13 +509,14 @@ scroll-scene {
 .button {
     display: block;
     width: fit-content;
-    margin: 20px auto;
+    margin: 25px auto;
     padding: 10px;
     background-color: var(--section-color);
     color: var(--color-text-white);
     border-radius: 10px;
 
     &:hover {
+        margin: 20px auto;
         border: solid var(--section-color-lighter) 5px;
     }
 }
