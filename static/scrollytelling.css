@@ -357,6 +357,11 @@ p {
 }
 
 .bold {
+    color: var(--section-color);
+    font-weight: 700;
+}
+
+.highlight {
     background-color: var(--section-color);
     color: var(--color-text-white);
     font-weight: var(--font-size-bold);
@@ -374,15 +379,6 @@ ul {
     li {
         margin-left: 1.1rem;
         padding-left: 0.3rem;
-    }
-}
-
-.no-highlight {
-    .bold {
-        background-color: unset;
-        color: var(--section-color);
-        padding: 0;
-        font-weight: 700;
     }
 }
 
