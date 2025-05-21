@@ -14,24 +14,27 @@ from scrollyboussole.part2_sect1_emploi
  */
 const data = {
     emissionsAnnuellesNM: [
-        {annee: '2008', emissions: 0, actEco: 0},
-        {annee: '2009', emissions: -74192.38, actEco: -35198},
-        {annee: '2010', emissions: 14027.468, actEco: 25642.8},
-        {annee: '2011', emissions: -129611.5, actEco: -34483.4},
-        {annee: '2012', emissions: -65538.98, actEco: 22298.9},
-        {annee: '2013', emissions: -8934.408, actEco: 58386.4},
-        {annee: '2014', emissions: -173643.3, actEco: -27257.4},
-        {annee: '2015', emissions: -159620.6, actEco: -18411.8},
-        {annee: '2016', emissions: -120920.1, actEco: 10933.5},
-        {annee: '2017', emissions: -138925.3, actEco: -9313.44},
-        {annee: '2018', emissions: -154316.8, actEco: -47289.9},
-        {annee: '2019', emissions: -137585.5, actEco: -45932.3},
-        {annee: '2020', emissions: -440668.3, actEco: -220265},
-        {annee: '2021', emissions: -130320.3, actEco: -21525.1},
+        {annee: '2008', emissions: 2488, actEco: 1265},
+        {annee: '2009', emissions: 2414, actEco: 1212},
+        {annee: '2010', emissions: 2441, actEco: 1210},
+        {annee: '2011', emissions: 2286, actEco: 1115},
+        {annee: '2012', emissions: 2375, actEco: 1140},
+        {annee: '2013', emissions: 2420, actEco: 1146},
+        {annee: '2014', emissions: 2280, actEco: 1086},
+        {annee: '2015', emissions: 2303, actEco: 1097},
+        {annee: '2016', emissions: 2333, actEco: 1098},
+        {annee: '2017', emissions: 2295, actEco: 1095},
+        {annee: '2018', emissions: 2309, actEco: 1122},
+        {annee: '2019', emissions: 2321, actEco: 1154},
+        {annee: '2020', emissions: 2074, actEco: 1119},
+        {annee: '2021', emissions: 2173, actEco: 1081},
+        {annee: '2022', emissions: 2048, actEco: 1020},
+        {annee: '2023', emissions: 2010, actEco: 1008},
     ],
     emissionsSousSecteurs: [
-        {annee: '2008', transport: 472839, tertiaire: 372336, industrie: 348355, agriculture: 57496, autres: 37028},
-        {annee: '2021', transport: 477007, tertiaire: 345098, industrie: 270513, agriculture: 48112, autres: 38529},
+        {annee: '2008', transport: 417, tertiaire: 398, industrie: 373, agriculture: 51, autres: 26},
+        {annee: '2023', transport: 387, tertiaire: 322, industrie: 221, agriculture: 42, autres: 36},
+
     ],
 };
 /*
@@ -47,9 +50,6 @@ const chartsConfigurations = {
                 right: 105,
             },
             tooltip: {},
-            legend: {
-                top: 'bottom',
-            },
             dataset: {
                 dimensions: ['annee', 'emissions', 'actEco'],
                 source: data.emissionsAnnuellesNM,
@@ -79,7 +79,7 @@ const chartsConfigurations = {
                 type: 'time',
                 name: 'Année',
                 min: '2008',
-                max: '2021',
+                max: '2023',
             },
             yAxis: {
                 type: 'value',
@@ -99,9 +99,6 @@ const chartsConfigurations = {
                 right: 105,
             },
             tooltip: {},
-            legend: {
-                top: 'bottom',
-            },
             dataset: {
                 dimensions: ['annee', 'emissions', 'actEco'],
                 source: data.emissionsAnnuellesNM,
@@ -150,7 +147,7 @@ const chartsConfigurations = {
                 type: 'time',
                 name: 'Année',
                 min: '2008',
-                max: '2021',
+                max: '2023',
             },
             yAxis: {
                 type: 'value',
@@ -164,7 +161,7 @@ const chartsConfigurations = {
     emissionsSousSecteurs:
         {
             grid: {
-                right: 100,
+                right: 110,
             },
             tooltip: {},
             dataset: {
@@ -173,7 +170,7 @@ const chartsConfigurations = {
             },
             series: [
                 {
-                    name: 'Transport',
+                    name: 'Transport de marchandises',
                     type: 'line',
                     color: colors.blacklight,
                     encode: {
@@ -188,6 +185,8 @@ const chartsConfigurations = {
                         show: true,
                         formatter: '{a}',
                         color: 'inherit',
+                        overflow: 'break',
+                        width: 110,
                     },
                 },
                 {
@@ -276,14 +275,15 @@ const chartsConfigurations = {
                     show: false,
                 },
                 axisLabel: {
-                    customValues: ['2008', '2021'],
+                    customValues: ['2008', '2023'],
                 },
             },
             yAxis: {
                 type: 'value',
                 name: 'Émissions (t.eqCO2)',
                 show: false,
-                min: (value) => value.min-15000,
+                min: 0,
+                max: 420,
             },
             textStyle: {
                 fontSize: 14,
@@ -293,7 +293,7 @@ const chartsConfigurations = {
     emissionsSousSecteursEmphase:
         {
             grid: {
-                right: 100,
+                right: 110,
             },
             tooltip: {},
             dataset: {
@@ -302,7 +302,7 @@ const chartsConfigurations = {
             },
             series: [
                 {
-                    name: 'Transport',
+                    name: 'Transport de marchandises',
                     type: 'line',
                     color: colors.blacklighter,
                     encode: {
@@ -338,6 +338,8 @@ const chartsConfigurations = {
                         formatter: '{a}',
                         color: 'inherit',
                     },
+                    lineStyle: {width: 4},
+                    symbolSize: 7,
                 },
                 {
                     name: 'Agriculture',
@@ -369,14 +371,15 @@ const chartsConfigurations = {
                     show: false,
                 },
                 axisLabel: {
-                    customValues: ['2008', '2021'],
+                    customValues: ['2008', '2023'],
                 },
             },
             yAxis: {
                 type: 'value',
                 name: 'Émissions (t.eqCO2)',
                 show: false,
-                min: (value) => value.min-15000,
+                min: 0,
+                max: 420,
             },
             textStyle: {
                 fontSize: 14,
