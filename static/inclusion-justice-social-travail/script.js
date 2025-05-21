@@ -2016,7 +2016,7 @@ const chartsConfigurations = {
     emploiSalarieNM:
         {
             title: {
-                text: 'Évolution de l’emploi',
+                text: 'Évolution de l’emploi salarié privé',
             },
             grid: {},
             tooltip: {},
@@ -2055,7 +2055,7 @@ const chartsConfigurations = {
         },
     emploiSalarieSecteurs:
         {
-            title: {text: 'Évolution de l’emploi par secteur. Base 100 : 2006'},
+            title: {text: 'Évolution de l’emploi salarié privé (hors intérim) par secteur'},
             grid: [
                 {right: '55%', bottom: '55%'},
                 {left: '55%', bottom: '55%'},
@@ -2067,12 +2067,12 @@ const chartsConfigurations = {
                 top: 'bottom',
                 selectedMode: false,
                 data: [
-                    {name: 'Commerce / Hébergmt et Rest. NM'},
-                    {name: 'Commerce / Hébergmt et Rest. FR'},
+                    {name: 'Commerce et CHR NM'},
+                    {name: 'Commerce et CHR FR'},
                 ],
                 formatter: function (name) {
-                    if (name === 'Commerce / Hébergmt et Rest. NM') return 'Nantes Métropole';
-                    if (name === 'Commerce / Hébergmt et Rest. FR') return 'National';
+                    if (name === 'Commerce et CHR NM') return 'Nantes Métropole';
+                    if (name === 'Commerce et CHR FR') return 'National';
                     return 'Erreur';
                 },
             },
@@ -2092,9 +2092,9 @@ const chartsConfigurations = {
             },
             series: [
                 {
-                    name: 'Commerce / Hébergmt et Rest. NM',
-                    xAxisIndex: 0,
-                    yAxisIndex: 0,
+                    name: 'Commerce et CHR NM',
+                    xAxisIndex: 1,
+                    yAxisIndex: 1,
                     type: 'line',
                     encode: {x: 'annee', y: 'chr_nantes_base'},
                     color: colors.secondary1,
@@ -2111,9 +2111,9 @@ const chartsConfigurations = {
                     },
                 },
                 {
-                    name: 'Commerce / Hébergmt et Rest. FR',
-                    xAxisIndex: 0,
-                    yAxisIndex: 0,
+                    name: 'Commerce et CHR FR',
+                    xAxisIndex: 1,
+                    yAxisIndex: 1,
                     type: 'line',
                     encode: {x: 'annee', y: 'chr_fr_base'},
                     color: colors.secondary1lighter,
@@ -2121,8 +2121,8 @@ const chartsConfigurations = {
                 },
                 {
                     name: 'Construction NM',
-                    xAxisIndex: 1,
-                    yAxisIndex: 1,
+                    xAxisIndex: 3,
+                    yAxisIndex: 3,
                     type: 'line',
                     encode: {x: 'annee', y: 'construction_nantes_base'},
                     color: colors.secondary1,
@@ -2140,17 +2140,17 @@ const chartsConfigurations = {
                 },
                 {
                     name: 'Construction FR',
-                    xAxisIndex: 1,
-                    yAxisIndex: 1,
+                    xAxisIndex: 3,
+                    yAxisIndex: 3,
                     type: 'line',
                     encode: {x: 'annee', y: 'construction_fr_base'},
                     color: colors.secondary1lighter,
                     lineStyle: {type: 'dotted'},
                 },
                 {
-                    name: 'Autres services hors interim NM',
-                    xAxisIndex: 2,
-                    yAxisIndex: 2,
+                    name: 'Services NM',
+                    xAxisIndex: 0,
+                    yAxisIndex: 0,
                     type: 'line',
                     encode: {
                         x: 'annee',
@@ -2165,18 +2165,18 @@ const chartsConfigurations = {
                     },
                 },
                 {
-                    name: 'Autres services hors interim FR',
-                    xAxisIndex: 2,
-                    yAxisIndex: 2,
+                    name: 'Services FR',
+                    xAxisIndex: 0,
+                    yAxisIndex: 0,
                     type: 'line',
                     encode: {x: 'annee', y: 'autresservices_fr_base'},
                     color: colors.secondary1lighter,
                     lineStyle: {type: 'dotted'},
                 },
                 {
-                    name: 'Industrie (et agriculture) NM',
-                    xAxisIndex: 3,
-                    yAxisIndex: 3,
+                    name: 'Industrie et agriculture NM',
+                    xAxisIndex: 2,
+                    yAxisIndex: 2,
                     type: 'line',
                     encode: {x: 'annee', y: 'industrie_nantes_base'},
                     color: colors.secondary1,
@@ -2188,9 +2188,9 @@ const chartsConfigurations = {
                     },
                 },
                 {
-                    name: 'Industrie (et agriculture) FR',
-                    xAxisIndex: 3,
-                    yAxisIndex: 3,
+                    name: 'Industrie et agriculture FR',
+                    xAxisIndex: 2,
+                    yAxisIndex: 2,
                     type: 'line',
                     encode: {x: 'annee', y: 'industrie_fr_base'},
                     color: colors.secondary1lighter,
@@ -2209,19 +2209,26 @@ const chartsConfigurations = {
                     type: 'value',
                     min: 80,
                     max: 160,
-                    name: 'Commerce, Hôtellerie, Restauration',
+                    name: 'Services',
                     nameTextStyle: {align: 'left'},
                 },
-                {gridIndex: 1, type: 'value', min: 80, max: 160, name: 'Construction', nameTextStyle: {align: 'left'}},
+                {
+                    gridIndex: 1,
+                    type: 'value',
+                    min: 80,
+                    max: 160,
+                    name: 'Commerce et CHR',
+                    nameTextStyle: {align: 'left'}
+                },
                 {
                     gridIndex: 2,
                     type: 'value',
                     min: 80,
                     max: 160,
-                    name: 'Autres services',
+                    name: 'Industrie et agriculture',
                     nameTextStyle: {align: 'left'}
                 },
-                {gridIndex: 3, type: 'value', min: 80, max: 160, name: 'Industrie', nameTextStyle: {align: 'left'}},
+                {gridIndex: 3, type: 'value', min: 80, max: 160, name: 'Construction', nameTextStyle: {align: 'left'}},
             ],
             textStyle: {
                 fontSize: 14,
@@ -2274,86 +2281,18 @@ const chartsConfigurations = {
             title: {
                 text: 'Évolution du taux de chômage',
             },
-            grid: {},
+            grid: {right: 90},
             tooltip: {},
             legend: {
                 top: 'bottom',
             },
-            dataset: {dimensions: ['trimestre', "nantes", "france", "paris", "orleans", "tours", "dijon", "rouen",
+            dataset: {
+                dimensions: ['trimestre', "nantes", "france", "paris", "orleans", "tours", "dijon", "rouen",
                     "lille", "metz", "nancy", "strasbourg", "brest", "rennes", "bordeaux", "montpellier", "toulouse",
                     "clermont_ferrand", "grenoble", "lyon", "saint_etienne", "marseille", "nice", "toulon"],
-                source: data.chomage},
+                source: data.chomage
+            },
             series: [
-                {
-                    name: 'Autre',
-                    type: 'line',
-                    smooth: true,
-                    smoothMonotone: 'x',
-                    encode: {x: 'trimestre', y: 'lille'},
-                    color: colors.blacklighter,
-                    symbol: "none",
-                    lineStyle: {width: 1},
-                },
-                {
-                    name: 'Autre',
-                    type: 'line',
-                    smooth: true,
-                    smoothMonotone: 'x',
-                    encode: {x: 'trimestre', y: 'strasbourg'},
-                    color: colors.blacklighter,
-                    symbol: "none",
-                    lineStyle: {width: 1},
-                },
-                {
-                    name: 'Autre',
-                    type: 'line',
-                    smooth: true,
-                    smoothMonotone: 'x',
-                    encode: {x: 'trimestre', y: 'rennes'},
-                    color: colors.blacklighter,
-                    symbol: "none",
-                    lineStyle: {width: 1},
-                },
-                {
-                    name: 'Autre',
-                    type: 'line',
-                    smooth: true,
-                    smoothMonotone: 'x',
-                    encode: {x: 'trimestre', y: 'bordeaux'},
-                    color: colors.blacklighter,
-                    symbol: "none",
-                    lineStyle: {width: 1},
-                },
-                {
-                    name: 'Autre',
-                    type: 'line',
-                    smooth: true,
-                    smoothMonotone: 'x',
-                    encode: {x: 'trimestre', y: 'toulouse'},
-                    color: colors.blacklighter,
-                    symbol: "none",
-                    lineStyle: {width: 1},
-                },
-                {
-                    name: 'Autre',
-                    type: 'line',
-                    smooth: true,
-                    smoothMonotone: 'x',
-                    encode: {x: 'trimestre', y: 'lyon'},
-                    color: colors.blacklighter,
-                    symbol: "none",
-                    lineStyle: {width: 1},
-                },
-                {
-                    name: 'Autre',
-                    type: 'line',
-                    smooth: true,
-                    smoothMonotone: 'x',
-                    encode: {x: 'trimestre', y: 'marseille'},
-                    color: colors.blacklighter,
-                    symbol: "none",
-                    lineStyle: {width: 1},
-                },
                 {
                     name: 'Zone d’emploi de Nantes',
                     type: 'line',
@@ -2364,6 +2303,79 @@ const chartsConfigurations = {
                     symbol: "none",
                     lineStyle: {width: 3},
                 },
+                {
+                    name: 'Autres zones d’emploi métropolitaines',
+                    type: 'line',
+                    smooth: true,
+                    smoothMonotone: 'x',
+                    encode: {x: 'trimestre', y: 'lille'},
+                    color: colors.blacklighter,
+                    symbol: "none",
+                    lineStyle: {width: 1},
+                },
+                {
+                    name: 'Autres zones d’emploi métropolitaines',
+                    type: 'line',
+                    smooth: true,
+                    smoothMonotone: 'x',
+                    encode: {x: 'trimestre', y: 'strasbourg'},
+                    color: colors.blacklighter,
+                    symbol: "none",
+                    lineStyle: {width: 1},
+                },
+                {
+                    name: 'Autres zones d’emploi métropolitaines',
+                    type: 'line',
+                    smooth: true,
+                    smoothMonotone: 'x',
+                    encode: {x: 'trimestre', y: 'rennes'},
+                    color: colors.blacklighter,
+                    symbol: "none",
+                    lineStyle: {width: 1},
+                    endLabel: {show: true, formatter: 'Rennes', color: 'inherit', fontSize: 12},
+                },
+                {
+                    name: 'Autres zones d’emploi métropolitaines',
+                    type: 'line',
+                    smooth: true,
+                    smoothMonotone: 'x',
+                    encode: {x: 'trimestre', y: 'bordeaux'},
+                    color: colors.blacklighter,
+                    symbol: "none",
+                    lineStyle: {width: 1},
+                    endLabel: {show: true, formatter: 'Bordeaux', color: 'inherit', fontSize: 12},
+                },
+                {
+                    name: 'Autres zones d’emploi métropolitaines',
+                    type: 'line',
+                    smooth: true,
+                    smoothMonotone: 'x',
+                    encode: {x: 'trimestre', y: 'toulouse'},
+                    color: colors.blacklighter,
+                    symbol: "none",
+                    lineStyle: {width: 1},
+                },
+                {
+                    name: 'Autres zones d’emploi métropolitaines',
+                    type: 'line',
+                    smooth: true,
+                    smoothMonotone: 'x',
+                    encode: {x: 'trimestre', y: 'lyon'},
+                    color: colors.blacklighter,
+                    symbol: "none",
+                    lineStyle: {width: 1},
+                    endLabel: {show: true, formatter: 'Lyon', color: 'inherit', fontSize: 12},
+                },
+                {
+                    name: 'Autres zones d’emploi métropolitaines',
+                    type: 'line',
+                    smooth: true,
+                    smoothMonotone: 'x',
+                    encode: {x: 'trimestre', y: 'marseille'},
+                    color: colors.blacklighter,
+                    symbol: "none",
+                    lineStyle: {width: 1},
+                },
             ],
             xAxis: {
                 type: 'time',
@@ -2371,7 +2383,10 @@ const chartsConfigurations = {
                 nameLocation: 'middle',
                 nameGap: 25,
             },
-            yAxis: [{type: 'value', name: 'Taux de chômage', max: 15}],
+            yAxis: {
+                type: 'value', max: 15,
+                axisLabel: {formatter: '{value} %'}
+            },
             textStyle: {
                 fontSize: 14,
                 fontFamily: "Poppins",
@@ -2556,6 +2571,18 @@ const mapLayers = {
             https://b.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png
             */
         }),
+        siae: geoJsonToLayer("data/siae.geojson", {
+            pointToLayer: function (feature, latlng) {
+                return L.circleMarker(latlng, {
+                    radius: 6,
+                    fillColor: "#ff7800",
+                    color: "#fff",
+                    weight: 2,
+                    opacity: 1,
+                    fillOpacity: 0.8
+                })
+            }
+        }),
     }
 ;
 
@@ -2569,7 +2596,7 @@ Chaque configuration est un objet contenant :
  */
 const mapConfigurations = {
     entreprises: {
-        layers: [mapLayers.osm],
+        layers: [mapLayers.osm, mapLayers.siae],
         coordinates: [47.22, -1.56],
         zoom: 12,
     },
