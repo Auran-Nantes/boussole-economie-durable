@@ -2229,7 +2229,7 @@ const chartsConfigurations = {
             title: {
                 text: 'Évolution du taux de chômage',
             },
-            grid: {},
+            grid: {right: 90},
             tooltip: {},
             legend: {top: 'bottom'},
             dataset: {dimensions: ['trimestre', "nantes", "france"], source: data.chomage},
@@ -2259,7 +2259,10 @@ const chartsConfigurations = {
                 nameLocation: 'middle',
                 nameGap: 25,
             },
-            yAxis: [{type: 'value', name: 'Taux de chômage', max: 15}],
+            yAxis: [{
+                type: 'value', name: 'Taux de chômage', max: 15,
+                axisLabel: {formatter: '{value} %'},
+            }],
             textStyle: {
                 fontSize: 14,
                 fontFamily: "Poppins",
@@ -2374,7 +2377,7 @@ const chartsConfigurations = {
             },
             yAxis: {
                 type: 'value', max: 15,
-                axisLabel: {formatter: '{value} %'}
+                axisLabel: {formatter: '{value} %'},
             },
             textStyle: {
                 fontSize: 14,
