@@ -2500,15 +2500,42 @@ const mapLayers = {
         }),
         siae: geoJsonToLayer("data/siae.geojson", {
             pointToLayer: function (feature, latlng) {
+                let prestation = feature.properties["Prestation inclusion"];
+                console.log(prestation);
+                let color;
+                switch (prestation) {
+                    case "Prestation de service, Fabrication et commercialisation de biens":
+                        color = colors.secondary1;
+                        break;
+                    case "Mise à disposition du personnel":
+                        color = colors.secondary2;
+                        break;
+                    case "Mise à disposition - Interim":
+                        color = colors.secondary3;
+                        break;
+                    case "Prestation de service":
+                        color = colors.primary1;
+                        break;
+                    default:
+                        console.log("Prestation sans couleur attribuée : " + prestation);
+                        color = "#000";
+                }
+                console.log(color);
                 return L.circleMarker(latlng, {
                     radius: 6,
-                    fillColor: "#ff7800",
+                    fillColor: color,
                     color: "#fff",
                     weight: 2,
                     opacity: 1,
-                    fillOpacity: 0.8
-                })
-            }
+                    fillOpacity: 0.7
+                });
+            },
+            onEachFeature: function (feature, layer) {
+                let content = "<b>" + feature.properties["Nom ou raison sociale de l'entreprise"] + "</b>";
+                content += "<br>" + feature.properties["Nature juridique de l'entreprise"];
+                content += "<br>" + feature.properties["Prestation inclusion"];
+                layer.bindPopup(content);
+            },
         }),
     }
 ;
