@@ -2244,7 +2244,7 @@ const chartsConfigurations = {
                     symbol: "none",
                 },
                 {
-                    name: 'France Métropolitaine',
+                    name: 'France (hors Mayotte)',
                     type: 'line',
                     smooth: true,
                     smoothMonotone: 'x',
