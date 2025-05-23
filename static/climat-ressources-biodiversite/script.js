@@ -450,7 +450,7 @@ const mapLayers = {
             geoJsonToLayer('data/arbres_zae.geojson',
                 {
                     style: {
-                        color: '#367812',
+                        color: '#7a8427',
                         weight: 1,
                         opacity: 0.8,
                         fillOpacity: 0.5,
@@ -461,7 +461,7 @@ const mapLayers = {
             geoJsonToLayer('data/vegetation_autre_zae.geojson',
                 {
                     style: {
-                        color: '#4b9f1a',
+                        color: '#ced77b',
                         weight: 1,
                         opacity: 0.8,
                         fillOpacity: 0.5,
