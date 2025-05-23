@@ -14,22 +14,35 @@ from scrollyboussole.part2_sect1_emploi
  */
 const data = {
     entreprises: [
-        {"annee": "2012", "creationsetab": 6686, "redressements": 10, "liquidations": 10},
-        {"annee": "2013", "creationsetab": 6400, "redressements": 10, "liquidations": 10},
-        {"annee": "2014", "creationsetab": 7105, "redressements": 10, "liquidations": 10},
-        {"annee": "2015", "creationsetab": 7014, "redressements": null, "liquidations": null},
-        {"annee": "2016", "creationsetab": 7729, "redressements": null, "liquidations": null},
-        {"annee": "2017", "creationsetab": 8491, "redressements": null, "liquidations": null},
-        {"annee": "2018", "creationsetab": 9132, "redressements": null, "liquidations": null},
-        {"annee": "2019", "creationsetab": 11103, "redressements": null, "liquidations": null},
-        {"annee": "2020", "creationsetab": 11019, "redressements": null, "liquidations": null},
-        {"annee": "2021", "creationsetab": 13571, "redressements": null, "liquidations": null},
-        {"annee": "2022", "creationsetab": 12835, "redressements": null, "liquidations": null},
-        {"annee": "2023", "creationsetab": 12254, "redressements": null, "liquidations": null},
+        {"annee": "2012", "creationsetab": 6686, "redressements": null, "liquidations": null},
+        {"annee": "2013", "creationsetab": 6400, "redressements": null, "liquidations": null},
+        {"annee": "2014", "creationsetab": 7105, "redressements": null, "liquidations": null},
+        {"annee": "2015", "creationsetab": 7014, "redressements": 205, "liquidations": 546},
+        {"annee": "2016", "creationsetab": 7729, "redressements": 210, "liquidations": 442},
+        {"annee": "2017", "creationsetab": 8491, "redressements": 165, "liquidations": 389},
+        {"annee": "2018", "creationsetab": 9132, "redressements": 153, "liquidations": 415},
+        {"annee": "2019", "creationsetab": 11103, "redressements": 198, "liquidations": 365},
+        {"annee": "2020", "creationsetab": 11019, "redressements": 84, "liquidations": 245},
+        {"annee": "2021", "creationsetab": 13571, "redressements": 57, "liquidations": 274},
+        {"annee": "2022", "creationsetab": 12835, "redressements": 94, "liquidations": 374},
+        {"annee": "2023", "creationsetab": 12254, "redressements": 168, "liquidations": 525},
+        {"annee": "2024", "creationsetab": null, "redressements": 174, "liquidations": 589}
     ],
     ess: [
-        {annee: "2012", emploiess: 600, emploiprivehorsess: 200, etabess: 400, etabprivehorsess: 500},
-        {annee: "2023", emploiess: 600, emploiprivehorsess: 200, etabess: 400, etabprivehorsess: 500},
+        {annee: '2010', emploiess: 100, emploiprivehorsess: 100, etabess: 100, etabprivehorsess: 100},
+        {annee: '2011', emploiess: 100.7, emploiprivehorsess: 103.1, etabess: 99.4, etabprivehorsess: 100},
+        {annee: '2012', emploiess: 99.6, emploiprivehorsess: 104.3, etabess: 100, etabprivehorsess: 102},
+        {annee: '2013', emploiess: 101.2, emploiprivehorsess: 104.8, etabess: 102.3, etabprivehorsess: 102.7},
+        {annee: '2014', emploiess: 102.3, emploiprivehorsess: 105.7, etabess: 104.6, etabprivehorsess: 102.9},
+        {annee: '2015', emploiess: 102.9, emploiprivehorsess: 107.6, etabess: 104, etabprivehorsess: 104.3},
+        {annee: '2016', emploiess: 101.7, emploiprivehorsess: 111, etabess: 104.1, etabprivehorsess: 105.5},
+        {annee: '2017', emploiess: 100.5, emploiprivehorsess: 115, etabess: 102.5, etabprivehorsess: 108.4},
+        {annee: '2018', emploiess: 101.3, emploiprivehorsess: 118.6, etabess: 100.7, etabprivehorsess: 110.4},
+        {annee: '2019', emploiess: 103.2, emploiprivehorsess: 121.5, etabess: 100.8, etabprivehorsess: 113},
+        {annee: '2020', emploiess: 103.8, emploiprivehorsess: 120.7, etabess: 100.4, etabprivehorsess: 115.7},
+        {annee: '2021', emploiess: 108.5, emploiprivehorsess: 124.6, etabess: 104, etabprivehorsess: 120.4},
+        {annee: '2022', emploiess: 109.3, emploiprivehorsess: 127.1, etabess: 106, etabprivehorsess: 122.5},
+
     ],
 };
 /*
@@ -37,7 +50,7 @@ Répertoire des configurations de graphiques, au format Apache Echarts
  */
 const chartsConfigurations = {
     creationsEtablissements: {
-        title: {text: "Création d’établissements"},
+        title: {text: "Création d’établissements sur Nantes Métropole"},
         grid: {},
         tooltip: {},
         dataset: {dimensions: ["annee", "creationsetab"], source: data.entreprises},
@@ -82,7 +95,7 @@ const chartsConfigurations = {
                 encode: {x: "annee", y: "redressementss"},
             },
         ],
-        xAxis: {type: "time", name: "Année", min: "2012", max: "2023"},
+        xAxis: {type: "time", name: "Année", min: "2015", max: "2024"},
         yAxis: {type: "value"},
         textStyle: {fontSize: 14, fontFamily: "Poppins"},
         color: [colors.secondary1, colors.secondary1lighter],
@@ -103,6 +116,17 @@ const chartsConfigurations = {
                 smoothMonotone: "x",
                 encode: {x: "annee", y: "emploiess"},
                 endLabel: {show: true, formatter: '{a}', color: 'inherit', width: 110, overflow: 'break'},
+                markLine: {
+                    symbol: 'none',
+                    label: {show: false},
+                    lineStyle: {
+                        color: "#555555",
+                        width: 2,
+                        type: 'solid',
+                        opacity: 0.6,
+                    },
+                    data: [{yAxis: 100}],
+                },
             },
             {
                 name: "Emplois privés hors ESS",
@@ -130,7 +154,7 @@ const chartsConfigurations = {
             },
         ],
         xAxis: {type: "time", name: "Année", min: "2012", max: "2023"},
-        yAxis: {type: "value"},
+        yAxis: {type: "value", min: 90, max: 130},
         textStyle: {fontSize: 14, fontFamily: "Poppins"},
         color: [colors.secondary2, colors.secondary2lighter, colors.primary1, colors.primary1lighter],
     },
