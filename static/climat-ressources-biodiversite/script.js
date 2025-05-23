@@ -59,7 +59,6 @@ const chartsConfigurations = {
                     name: 'Émissions totales',
                     type: 'line',
                     smooth: true,
-                    smoothMonotone: 'x',
                     encode: {
                         x: 'annee',
                         y: 'emissions',
@@ -108,7 +107,6 @@ const chartsConfigurations = {
                     name: 'Émissions totales',
                     type: 'line',
                     smooth: true,
-                    smoothMonotone: 'x',
                     encode: {
                         x: 'annee',
                         y: 'emissions',
@@ -127,7 +125,6 @@ const chartsConfigurations = {
                     name: 'Activités économiques',
                     type: 'line',
                     smooth: true,
-                    smoothMonotone: 'x',
                     encode: {
                         x: 'annee',
                         y: 'actEco',
