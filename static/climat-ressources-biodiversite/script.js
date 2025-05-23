@@ -26,8 +26,8 @@ const data = {
         {annee: '2017', emissions: 2295, actEco: 1095},
         {annee: '2018', emissions: 2309, actEco: 1122},
         {annee: '2019', emissions: 2321, actEco: 1154},
-        {annee: '2020', emissions: 2074, actEco: 1119},
-        {annee: '2021', emissions: 2173, actEco: 1081},
+        {annee: '2020', emissions: 2074, actEco: 1057},
+        {annee: '2021', emissions: 2173, actEco: 1103},
         {annee: '2022', emissions: 2048, actEco: 1020},
         {annee: '2023', emissions: 2010, actEco: 1008},
     ],
@@ -82,7 +82,7 @@ const chartsConfigurations = {
             },
             yAxis: {
                 type: 'value',
-                name: 'Émissions (t.eqCO2)',
+                name: 'Émissions (kt.eqCO2)',
             },
             textStyle: {
                 fontSize: 14,
@@ -148,7 +148,7 @@ const chartsConfigurations = {
             },
             yAxis: {
                 type: 'value',
-                name: 'Émissions (t.eqCO2)',
+                name: 'Émissions (kt.eqCO2)',
             },
             textStyle: {
                 fontSize: 14,
