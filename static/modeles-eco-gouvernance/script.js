@@ -153,7 +153,7 @@ const chartsConfigurations = {
                 endLabel: {show: true, formatter: '{a}', color: 'inherit', width: 110, overflow: 'break'},
             },
         ],
-        xAxis: {type: "time", name: "Année", min: "2012", max: "2023"},
+        xAxis: {type: "time", name: "Année", min: "2010", max: "2022"},
         yAxis: {type: "value", min: 90, max: 130},
         textStyle: {fontSize: 14, fontFamily: "Poppins"},
         color: [colors.secondary2, colors.secondary2lighter, colors.primary1, colors.primary1lighter],
