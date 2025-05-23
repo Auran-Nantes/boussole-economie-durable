@@ -50,7 +50,7 @@ body {
     --font-size-bold: 600;
     /* Max width of a key-value
     Based on the max width of a flex column */
-    --key-value-max-width: calc(var(--normal-max-width) * 0.9 / 3);
+    --key-value-max-width: calc(var(--normal-max-width) * 0.95 / 3);
 
     font-family: "Poppins", sans-serif;
     font-size: 16px;
