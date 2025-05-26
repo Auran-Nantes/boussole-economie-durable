@@ -292,7 +292,8 @@
                     </p>
                     <div class="min-full-height"></div>
                 </scroll-scene>
-                <scroll-scene scroll-figure="taux-emploi" scroll-type="chart" scroll-chart-name="tauxEmploiAge">
+                <scroll-scene scroll-figure="taux-emploi" scroll-type="chart" scroll-chart-name="tauxEmploiAge"
+                              scroll-source="Insee, recensement de la population, 2021">
                     <div class="stick-to-top stick-to-title">
                         <p>
                             Le taux d’emploi des jeunes et des seniors est inférieur à celui de la population générale.
@@ -308,7 +309,8 @@
                     </div>
                     <div class="min-full-height"></div>
                 </scroll-scene>
-                <scroll-scene scroll-figure="taux-emploi" scroll-type="chart" scroll-chart-name="tauxEmploiGenre">
+                <scroll-scene scroll-figure="taux-emploi" scroll-type="chart" scroll-chart-name="tauxEmploiGenre"
+                              scroll-source="Insee, recensement de la population, 2021">
                     <p class="stick-to-top stick-to-title">
                         Le taux d’emploi des femmes demeure quant à lui légèrement inférieur à celui des hommes, mais
                         l’écart s’est réduit au cours de la dernière décennie.
@@ -474,149 +476,36 @@
         <h1 class="stick-to-top sticky-title has-background-white"><span>Inégalités de revenus</span></h1>
         <div class="columns">
             <div class="column">
-                <div class="stick-to-top stick-to-title sticky-stack has-background-white">
-                    <p>
-                        Nantes Métropole est la métropole la moins inégalitaire de France. Les 10% les plus riches
-                        gagnent 5,8 fois plus que les 10% les plus pauvres.
-                    </p>
-                    <p>
-                        Les inégalités se sont néanmoins accentuées (rapport interdéciles de 5,2 en 2013), comme dans la
-                        plupart des métropoles françaises.
-                    </p>
-                </div>
-                <div class="min-full-height"></div>
-                <div class="stick-to-top sticky-stack has-background-white">
-                    <p>
-                        Les mécanismes redistributifs permettent d’atténuer fortement les inégalités de revenus, qui
-                        passent de 5,8 à 3,1 après impôts et aides sociales.
-                    </p>
-                    <p>
-                        Il est toutefois important de souligner que cette analyse ne tient pas compte de la situation de
-                        80% de la population au sein desquelles des évolutions significatives ont pu avoir lieu
-                    </p>
-                </div>
-                <div class="min-full-height"></div>
+                <scroll-scene scroll-figure="interdecile" scroll-type="chart" scroll-chart-name="interdecile"
+                              scroll-source="Auran, d’après Insee - Filosofi (revenus déclarés)">
+                    <div class="stick-to-top stick-to-title sticky-stack has-background-white">
+                        <p>
+                            Le rapport interdécile est un indicateur qui permet de mesurer l'écart de richesse entre les
+                            10 % des ménages les plus riches et les 10% les plus pauvres. Il est utilisé pour illustrer
+                            les inégalités de revenus d'une population.
+                        </p>
+                        <p>
+                            D'après cet indicateur, Nantes Métropole apparaît comme la métropole la moins inégalitaire,
+                            avec un rapport de 5,8 en 2020 (c'est-à-dire que les revenus des plus riches sont 5,8 fois
+                            plus élevés que ceux des ménages les plus pauvres). Cet écart est même réduit à 3,1 en
+                            prenant en compte les mécanismes redistributifs de richesse (impôts et aides sociales).
+                        </p>
+                    </div>
+                    <div class="min-full-height"></div>
+                    <div class="stick-to-top sticky-stack has-background-white">
+                        <p>
+                            Toutefois, comme dans la plupart des métropoles françaises, ces inégalités se sont
+                            accentuées entre 2013 et 2020. Il est important de souligner que cet indicateur ne tient pas
+                            compte de la situation de 80 % des ménages, où des évolutions significatives ont également
+                            pu avoir lieu.
+                        </p>
+                    </div>
+                    <div class="min-full-height"></div>
+                </scroll-scene>
             </div>
             <div class="column stick-to-top stick-to-title">
-                <table>
-                    <thead>
-                    <tr>
-                        <th colspan="3">Revenus déclarés</th>
-                    </tr>
-                    <tr>
-                        <th scope="col">Intercommunalité</th>
-                        <th scope="col">Rapport interdécile 2020</th>
-                        <th scope="col">Rapport interdécile 2013</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <th scope="row">Paris</th>
-                        <td>10,26</td>
-                        <td>11,05</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Nancy</th>
-                        <td>9,79</td>
-                        <td>8,23</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Strasbourg</th>
-                        <td>9,71</td>
-                        <td>8,19</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Montpellier</th>
-                        <td>9,29</td>
-                        <td>8,38</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Marseille</th>
-                        <td>9,03</td>
-                        <td>12,88</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Toulouse</th>
-                        <td>8,47</td>
-                        <td>7,04</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Metz</th>
-                        <td>8,19</td>
-                        <td>7,29</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Rouen</th>
-                        <td>8,01</td>
-                        <td>6,67</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Lyon</th>
-                        <td>8,00</td>
-                        <td>6,96</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Nice</th>
-                        <td>7,80</td>
-                        <td>7,19</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Saint-Étienne</th>
-                        <td>7,19</td>
-                        <td>6,06</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Tours</th>
-                        <td>7,14</td>
-                        <td>6,08</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Toulon</th>
-                        <td>7,04</td>
-                        <td>6,66</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Clermont-Ferrand</th>
-                        <td>6,93</td>
-                        <td>5,88</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Bordeaux</th>
-                        <td>6,65</td>
-                        <td>6,03</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Orléans</th>
-                        <td>6,56</td>
-                        <td>6,06</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Rennes</th>
-                        <td>6,48</td>
-                        <td>5,54</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Grenoble</th>
-                        <td>6,36</td>
-                        <td>5,62</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Brest</th>
-                        <td>6,06</td>
-                        <td>5,10</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Dijon</th>
-                        <td>6,03</td>
-                        <td>5,29</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Nantes</th>
-                        <td>5,82</td>
-                        <td>5,18</td>
-                    </tr>
-                    </tbody>
-                </table>
+                <figure id="interdecile" class="min-full-height with-title"></figure>
+                <p class="source centered"></p>
             </div>
         </div>
     </section>
