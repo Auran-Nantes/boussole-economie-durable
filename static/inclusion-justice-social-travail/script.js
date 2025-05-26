@@ -2452,7 +2452,7 @@ const chartsConfigurations = {
                     axisLabel: {show: false},
                     min: 0, max: 100,
                 },
-                {gridIndex: 1, min: 0, max: 100, axisLabel: {formatter:  '{value} %'}},
+                {gridIndex: 1, min: 0, max: 100, axisLabel: {formatter: '{value} %'}},
             ],
             color: colors.secondary2,
             textStyle: {
@@ -2522,7 +2522,7 @@ const chartsConfigurations = {
                     axisLabel: {show: false},
                     min: 0, max: 100,
                 },
-                {gridIndex: 1, min: 0, max: 100, axisLabel: {formatter:  '{value} %'}},
+                {gridIndex: 1, min: 0, max: 100, axisLabel: {formatter: '{value} %'}},
             ],
             color: colors.secondary2,
             textStyle: {
@@ -2591,7 +2591,7 @@ const chartsConfigurations = {
                     axisLabel: {show: false},
                     min: 0, max: 100,
                 },
-                {gridIndex: 1, min: 0, max: 100, axisLabel: {formatter:  '{value} %'}},
+                {gridIndex: 1, min: 0, max: 100, axisLabel: {formatter: '{value} %'}},
             ],
             color: colors.secondary2,
             textStyle: {
@@ -2611,7 +2611,16 @@ const chartsConfigurations = {
 /*
 Répertoire des "hooks" : des fonctions à exécuter avant ou après certains évènements de scroll
  */
-const hooks = {};
+const hooks = {
+    interdecile: function () {
+        // Il n’est pas possibl d’intégrer un script avec innerHtml, il n’est pas exécuté. Pour cela, on utilise le
+        // système ci-dessous en "post-hook"
+        let s = document.createElement("script");
+        s.src = "https://public.flourish.studio/resources/embed.js";
+        let e =document.getElementById("interdecile-flourish-div");
+        e.appendChild(s);
+    }
+};
 
 /*
 Un petit dictionnaire de couches utilisées dans les différentes cartes interactives. Elles sont à renseigner
@@ -2699,7 +2708,11 @@ const mapConfigurations = {
 /*
 HTML customs
  */
-const customHtml = {}
+const customHtml = {
+    // Il n’est pas possibl d’intégrer un script avec innerHtml, il n’est pas exécuté. Pour cela, on utilise un
+    // "post-hook"
+    interdecile: '<div id="interdecile-flourish-div" class="flourish-embed flourish-scatter" data-src="visualisation/22788120"></div>'
+}
 
 /*
 Fonctions custom utilisées en paramètres des librairies de graphiques ou de cartes.

@@ -324,6 +324,7 @@
             </div>
         </div>
     </section>
+
     <section>
         <h1 class="stick-to-top sticky-title has-background-white"><span>Diversité liée au handicap</span></h1>
         <div class="columns stick-to-top stick-to-title sticky-stack has-background-white">
@@ -372,7 +373,6 @@
             </div>
         </div>
         <div class="min-full-height"></div>
-
         <div class="columns stick-to-top sticky-stack has-background-white">
             <div class="column">
                 <div class="key-value">
@@ -530,7 +530,8 @@
         <h1 class="stick-to-top sticky-title has-background-white"><span>Inégalités de revenus</span></h1>
         <div class="columns">
             <div class="column">
-                <scroll-scene scroll-figure="interdecile" scroll-type="chart" scroll-chart-name="interdecile"
+                <scroll-scene scroll-figure="interdecile" scroll-type="html" scroll-html-name="interdecile"
+                              scroll-post-hook="interdecile"
                               scroll-source="Auran, d’après Insee - Filosofi (revenus déclarés)">
                     <div class="stick-to-top stick-to-title sticky-stack has-background-white">
                         <p>
@@ -558,7 +559,7 @@
                 </scroll-scene>
             </div>
             <div class="column stick-to-top stick-to-title">
-                <figure id="interdecile" class="min-full-height with-title"></figure>
+                <figure id="interdecile"></figure>
                 <p class="source centered"></p>
             </div>
         </div>
