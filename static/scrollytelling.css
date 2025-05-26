@@ -539,17 +539,17 @@ Tables
 table {
     border-collapse: collapse;
     border-spacing: 0;
+    border: 1px solid var(--section-color);
     width: 100%;
 
-    tr:nth-child(even) {
-        background-color: var(--section-color-lighter);
+    tr {
+        border: 1px solid var(--section-color);
     }
 
     thead {
-
         tr {
             background-color: var(--section-color);
-            color: var(--color-text-white)
+            color: var(--color-text-white);
         }
 
         tr:nth-child(even) {
@@ -558,7 +558,7 @@ table {
     }
 
     th, td {
-        padding: 3px 10px;
+        padding: 10px 10px;
         text-align: center;
     }
 }
