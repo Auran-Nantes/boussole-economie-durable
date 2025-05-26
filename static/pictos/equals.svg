@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 600 600"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="equals-solid.svg"
+   width="600"
+   height="600"
+   inkscape:version="1.4 (86a8ad7, 2024-10-11)"
+   inkscape:export-filename="equals.png"
+   inkscape:export-xdpi="16"
+   inkscape:export-ydpi="16"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.78808594"
+     inkscape:cx="182.72119"
+     inkscape:cy="202.3891"
+     inkscape:window-width="1920"
+     inkscape:window-height="1009"
+     inkscape:window-x="1912"
+     inkscape:window-y="-2"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg1" />
+  <circle
+     style="fill:#46457e;fill-opacity:1;stroke:none;stroke-width:22.6772;stroke-linecap:round;stroke-linejoin:round;paint-order:markers stroke fill"
+     id="path2"
+     cx="300"
+     cy="300"
+     r="300" />
+  <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+  <path
+     d="m 124.00001,172.00001 c -17.7,0 -32.000003,14.3 -32.000003,32 0,17.7 14.300003,32 32.000003,32 h 352 c 17.7,0 32,-14.3 32,-32 0,-17.7 -14.3,-32 -32,-32 z m 0,192 c -17.7,0 -32.000003,14.3 -32.000003,32 0,17.7 14.300003,32 32.000003,32 h 352 c 17.7,0 32,-14.3 32,-32 0,-17.7 -14.3,-32 -32,-32 z"
+     id="path1"
+     style="fill:#ffffff;fill-opacity:1;stroke:none" />
+</svg>

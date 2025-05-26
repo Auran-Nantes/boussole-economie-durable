@@ -525,6 +525,12 @@ a {
     text-align: center;
 }
 
+.picto {
+    object-fit: contain;
+    height: 1.3rem;
+    vertical-align: sub;
+}
+
 
 /* ------------------------
 Tables
