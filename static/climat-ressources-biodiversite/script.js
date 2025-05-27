@@ -157,8 +157,12 @@ const chartsConfigurations = {
         },
     emissionsSousSecteurs:
         {
+            title: {text: "Émissions par secteur professionnel"},
             grid: {
-                right: 110,
+                right: "25%",
+                left: "25%",
+                bottom: "10%",
+                top: "20%"
             },
             tooltip: {},
             dataset: {
@@ -196,6 +200,7 @@ const chartsConfigurations = {
                     },
                     label: {
                         show: true,
+                        position: 'bottom',
                         formatter: (params) => label_sous_secteurs(params),
                     },
                     endLabel: {
@@ -237,7 +242,7 @@ const chartsConfigurations = {
                     },
                     endLabel: {
                         show: true,
-                        formatter: '{a}',
+                        formatter: '{a}\n',
                         color: 'inherit',
                     },
                 },
@@ -256,7 +261,7 @@ const chartsConfigurations = {
                     },
                     endLabel: {
                         show: true,
-                        formatter: '{a}',
+                        formatter: '\n{a}',
                         color: 'inherit',
                     },
                 },
@@ -277,20 +282,26 @@ const chartsConfigurations = {
             },
             yAxis: {
                 type: 'value',
-                name: 'Émissions (t.eqCO2)',
-                show: false,
+                name: 't.eqCO2',
+                nameGap: 30,
+                axisLabel: {show: false},
+                splitLine: {show: false},
                 min: 0,
                 max: 420,
             },
             textStyle: {
-                fontSize: 14,
+                fontSize: 13,
                 fontFamily: "Poppins",
             },
         },
     emissionsSousSecteursEmphase:
         {
+            title: {text: "Émissions par secteur professionnel"},
             grid: {
-                right: 110,
+                right: "25%",
+                left: "25%",
+                bottom: "10%",
+                top: "20%"
             },
             tooltip: {},
             dataset: {
@@ -373,13 +384,15 @@ const chartsConfigurations = {
             },
             yAxis: {
                 type: 'value',
-                name: 'Émissions (t.eqCO2)',
-                show: false,
+                name: 't.eqCO2',
+                nameGap: 30,
+                axisLabel: {show: false},
+                splitLine: {show: false},
                 min: 0,
                 max: 420,
             },
             textStyle: {
-                fontSize: 14,
+                fontSize: 13,
                 fontFamily: "Poppins",
             },
         },
