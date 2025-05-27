@@ -290,7 +290,7 @@ const chartsConfigurations = {
                 max: 420,
             },
             textStyle: {
-                fontSize: 13,
+                fontSize: 14,
                 fontFamily: "Poppins",
             },
         },
@@ -392,7 +392,7 @@ const chartsConfigurations = {
                 max: 420,
             },
             textStyle: {
-                fontSize: 13,
+                fontSize: 14,
                 fontFamily: "Poppins",
             },
         },
