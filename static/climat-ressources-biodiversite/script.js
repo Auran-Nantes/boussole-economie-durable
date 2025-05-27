@@ -44,7 +44,7 @@ const chartsConfigurations = {
     emissionsAnnuellesNM:
         {
             title: {
-                text: 'Une diminution progressive des émissions de GES',
+                text: 'Une diminution progressive des émissions de gaz à effet de serre',
             },
             grid: {
                 right: 105,
@@ -79,6 +79,7 @@ const chartsConfigurations = {
                 name: 'Année',
                 min: '2008',
                 max: '2023',
+                axisLabel: {showMinLabel: true, showMaxLabel: true},
             },
             yAxis: {
                 type: 'value',
@@ -92,7 +93,7 @@ const chartsConfigurations = {
     emissionsAnnuellesActEco:
         {
             title: {
-                text: 'Une diminution progressive des émissions de GES',
+                text: 'Une diminution progressive des émissions de gaz à effet de serre',
             },
             grid: {
                 right: 105,
@@ -145,6 +146,7 @@ const chartsConfigurations = {
                 name: 'Année',
                 min: '2008',
                 max: '2023',
+                axisLabel: {showMinLabel: true, showMaxLabel: true},
             },
             yAxis: {
                 type: 'value',
