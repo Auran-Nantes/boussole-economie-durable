@@ -2465,7 +2465,7 @@ const chartsConfigurations = {
                     barWidth: 40,
                     markLine: {
                         symbol: 'none',
-                        label: {show: true, formatter: "{c} %"},
+                        label: {show: true, formatter: "15-64\nans"},
                         lineStyle: {
                             color: "#555555",
                             width: 2,
@@ -2535,7 +2535,7 @@ const chartsConfigurations = {
                     barWidth: 40,
                     markLine: {
                         symbol: 'none',
-                        label: {show: true, formatter: "{c} %"},
+                        label: {show: true, formatter: "15-64\nans"},
                         lineStyle: {
                             color: "#555555",
                             width: 2,
