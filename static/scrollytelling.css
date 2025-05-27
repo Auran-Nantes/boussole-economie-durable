@@ -579,3 +579,23 @@ table {
         text-align: center;
     }
 }
+
+/* ------------------------
+Maps
+Additional CSS for maps elements
+------------------------ */
+
+/* Removes section styling inside leaflet containers */
+.leaflet-container section {
+    height: unset;
+    min-height: unset;
+    padding: unset;
+}
+
+.map-legend-rectangle {
+    display: inline-block;
+    vertical-align: sub;
+    height: 1rem;
+    width: 1.5rem;
+    box-sizing: border-box;
+}

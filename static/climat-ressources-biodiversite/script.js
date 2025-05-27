@@ -493,6 +493,46 @@ const mapLayers = {
 ;
 
 /*
+Configurations des légendes, sous forme d’un dictionnaire.
+ */
+const mapLegends = {
+    conso_zan: createLegend([
+        {
+            name : "Espaces consommés entre 2019 et 2021", layer: mapLayers.conso_zan_zae,
+            style: {
+                type: "rectangle",
+                color: '#b83c26',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.5,
+            }
+        }
+    ]),
+    cadastre_vert: createLegend([
+        {
+            name: "Végétation arborée", layer: mapLayers.arbres_zae,
+            style: {
+                type: "rectangle",
+                color: '#7a8427',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.5,
+            }
+        },
+        {
+            name: "Autre végétation", layer: mapLayers.vegetation_autre,
+            style: {
+                type: "rectangle",
+                color: '#ced77b',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.5,
+            }
+        }
+    ]),
+};
+
+/*
 Configurations des cartes, sous forme d’un dictionnaire.
 Les clés sont les noms des cartes (à renseigner dans l’attribut scroll-map-name dans le HTML)
 Chaque configuration est un objet contenant :
@@ -506,12 +546,14 @@ const mapConfigurations = {
             layers: [mapLayers.osm, mapLayers.conso_zan_zae, mapLayers.zae, mapLayers.communes_nm],
             coordinates: [47.22, -1.56],
             zoom: 12,
+            legend: mapLegends.conso_zan,
         },
     cadastre_vert:
         {
             layers: [mapLayers.osm, mapLayers.arbres_zae, mapLayers.vegetation_autre, mapLayers.zae, mapLayers.communes_nm],
             coordinates: [47.22, -1.56],
             zoom: 12,
+            legend: mapLegends.cadastre_vert,
         },
     icu:
         {

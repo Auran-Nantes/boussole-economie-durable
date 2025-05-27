@@ -268,6 +268,8 @@ function scrollMap(scrollData) {
     */
     // On ajoute les couches à la carte
     addLayersToMap(divId, mapName);
+    // On ajoute la légende s’il y en a une de demandée
+    addLegendToMap(divId, mapName);
     // On définit le point de vue de la carte
     setViewMapFromScroll(scrollData);
 }
@@ -326,6 +328,19 @@ async function addLayersToMap(divId, mapName) {
     }
 }
 
+async function addLegendToMap(divId, mapName) {
+    /*
+    Ajoute la légende mentionnée dans la configuration de la carte.
+     */
+    // Récupère la référence de la carte
+    const map = mapRegistry[divId];
+    // Récupère la configuration de la carte
+    const mapConfig = mapConfigurations[mapName];
+    // Récupère la légende
+    const legend = mapConfig.legend;
+    if (legend) (await legend).addTo(map);
+}
+
 function removeLayersFromMap(divId) {
     /*
     Retire toutes les couches d’une carte interactive
@@ -375,6 +390,26 @@ async function geoJsonToLayer(geoJson, options) {
     const response = await fetch(geoJson);
     const data = await response.json();
     return L.geoJson(data, options);
+}
+
+async function createLegend(layersStyle) {
+    let layers = {};
+    for (const layer of layersStyle) {
+        if (layer.style.type === 'rectangle') {
+            const weight = layer.style.weight ? layer.style.weight : 3;
+            const color = layer.style.color ? layer.style.color : 'black';
+            const fillColor = layer.style.fillColor ? layer.style.fillColor : color;
+            const opacity = layer.style.opacity ? layer.style.opacity : 1;
+            const fillOpacity = layer.style.fillOpacity ? layer.style.fillOpacity : 0.7;
+            let style = '<div class="map-legend-rectangle" style="'
+                + 'border: ' + weight + 'px solid '
+                + 'rgb(from ' + color + ' r g b / ' + opacity + '); '
+                + 'background: rgb(from ' + fillColor + ' r g b / ' + fillOpacity + ');'
+                + '"></div> ' + layer.name;
+            layers[style] = await layer.layer;
+        }
+    }
+    return L.control.layers(null, layers, {collapsed: false, autoZIndex: true, position: "bottomleft"});
 }
 
 function scrollSource(scrollData) {
