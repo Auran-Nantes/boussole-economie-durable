@@ -1996,29 +1996,6 @@ const data = {
             ["Statut", "15-64 ans", "15-24 ans", "25-54 ans", "55-64 ans", "Hommes", "Femmes"],
             ["Emploi", 67.1, 31.8, 82.8, 57.6, 69.3, 65.0],
         ],
-    interdecile: [
-        {interco: 'Paris', '2013': 11.05, '2020': 10.26},
-        {interco: 'Nancy', '2013': 8.23, '2020': 9.79},
-        {interco: 'Strasbourg', '2013': 8.19, '2020': 9.71},
-        {interco: 'Montpellier', '2013': 8.38, '2020': 9.29},
-        {interco: 'Marseille', '2013': 12.88, '2020': 9.03},
-        {interco: 'Toulouse', '2013': 7.04, '2020': 8.47},
-        {interco: 'Metz', '2013': 7.29, '2020': 8.19},
-        {interco: 'Rouen', '2013': 6.67, '2020': 8.01},
-        {interco: 'Lyon', '2013': 6.96, '2020': 8},
-        {interco: 'Nice', '2013': 7.19, '2020': 7.8},
-        {interco: 'Saint-Étienne', '2013': 6.06, '2020': 7.19},
-        {interco: 'Tours', '2013': 6.08, '2020': 7.14},
-        {interco: 'Toulon', '2013': 6.66, '2020': 7.04},
-        {interco: 'Clermont-Ferrand', '2013': 5.88, '2020': 6.93},
-        {interco: 'Bordeaux', '2013': 6.03, '2020': 6.65},
-        {interco: 'Orléans', '2013': 6.06, '2020': 6.56},
-        {interco: 'Rennes', '2013': 5.54, '2020': 6.48},
-        {interco: 'Grenoble', '2013': 5.62, '2020': 6.36},
-        {interco: 'Brest', '2013': 5.1, '2020': 6.06},
-        {interco: 'Dijon', '2013': 5.29, '2020': 6.03},
-        {interco: 'Nantes', '2013': 5.18, '2020': 5.82},
-    ],
 };
 /*
 Répertoire des configurations de graphiques, au format Apache Echarts
@@ -2289,7 +2266,7 @@ const chartsConfigurations = {
                 nameGap: 25,
             },
             yAxis: [{
-                type: 'value', name: 'Taux de chômage', max: 15,
+                type: 'value', max: 15,
                 axisLabel: {formatter: '{value} %'},
             }],
             textStyle: {
@@ -2488,14 +2465,14 @@ const chartsConfigurations = {
                     barWidth: 40,
                     markLine: {
                         symbol: 'none',
-                        label: {show: false},
+                        label: {show: true, formatter: "{c} %"},
                         lineStyle: {
                             color: "#555555",
                             width: 2,
                             type: 'solid',
                             opacity: 0.6,
                         },
-                        data: [{yAxis: 67}],
+                        data: [{yAxis: 67.1}],
                     },
                 },
             ],
@@ -2558,14 +2535,14 @@ const chartsConfigurations = {
                     barWidth: 40,
                     markLine: {
                         symbol: 'none',
-                        label: {show: false},
+                        label: {show: true, formatter: "{c} %"},
                         lineStyle: {
                             color: "#555555",
                             width: 2,
                             type: 'solid',
                             opacity: 0.6,
                         },
-                        data: [{yAxis: 67}],
+                        data: [{yAxis: 67.1}],
                     },
                 },
             ],
@@ -2599,14 +2576,6 @@ const chartsConfigurations = {
                 fontFamily: "Poppins",
             },
         },
-    interdecile:
-        {
-            title: {text: "Rapports interdéciles des principales métropoles"},
-            dataset: {source: data.interdecile, dimensions: ["interco", "2013", "2020"]},
-            series: [],
-            grid: {},
-            xAxis: {}
-        }
 };
 /*
 Répertoire des "hooks" : des fonctions à exécuter avant ou après certains évènements de scroll
