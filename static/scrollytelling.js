@@ -270,6 +270,10 @@ function scrollMap(scrollData) {
     addLayersToMap(divId, mapName);
     // On ajoute la légende s’il y en a une de demandée
     addLegendToMap(divId, mapName);
+    // On ajoute le titre s’il y en a un de demandé
+    addTitleToMap(divId, mapName);
+    // On ajoute le contrôle de zoom
+    addZoomToMap(divId, mapName);
     // On définit le point de vue de la carte
     setViewMapFromScroll(scrollData);
 }
@@ -310,7 +314,7 @@ function createMap(divId) {
     Crée une carte à partir de l’ID de son container. Enregistre la carte dans le registre des cartes.
      */
     const mapContainer = document.getElementById(divId);
-    mapRegistry[divId] = L.map(mapContainer, {preferCanvas: true, scrollWheelZoom: false});
+    mapRegistry[divId] = L.map(mapContainer, {preferCanvas: true, scrollWheelZoom: false, zoomControl: false});
 }
 
 async function addLayersToMap(divId, mapName) {
@@ -338,7 +342,42 @@ async function addLegendToMap(divId, mapName) {
     const mapConfig = mapConfigurations[mapName];
     // Récupère la légende
     const legend = mapConfig.legend;
-    if (legend) (await legend).addTo(map);
+    const position = mapConfig.elementSide === "right" ? "bottomright" : "bottomleft";
+    if (legend) (await createLegend(legend, position)).addTo(map);
+}
+
+function addTitleToMap(divId, mapName) {
+    /*
+    Ajoute le titre mentionné dans la configuration de la carte.
+     */
+    // Récupère la référence de la carte
+    const map = mapRegistry[divId];
+    // Récupère la configuration de la carte
+    const mapConfig = mapConfigurations[mapName];
+    // Récupère le titre
+    const title = mapConfig.title;
+    const position = mapConfig.elementSide === "right" ? "topright" : "topleft";
+    if (title) {
+        let titleControl = L.control({position: position});
+        titleControl.onAdd = function (map) {
+            let div = L.DomUtil.create("div", "map-title");
+            div.innerHTML = title;
+            return div;
+        };
+        titleControl.addTo(map);
+    }
+}
+
+function addZoomToMap(divId, mapName) {
+    /*
+    Ajoute le titre mentionné dans la configuration de la carte.
+     */
+    // Récupère la référence de la carte
+    const map = mapRegistry[divId];
+    // Récupère la configuration de la carte
+    const mapConfig = mapConfigurations[mapName];
+    const position = mapConfig.elementSide === "right" ? "topright" : "topleft";
+    L.control.zoom({position: position}).addTo(map);
 }
 
 function removeLayersFromMap(divId) {
@@ -392,9 +431,11 @@ async function geoJsonToLayer(geoJson, options) {
     return L.geoJson(data, options);
 }
 
-async function createLegend(layersStyle) {
+async function createLegend(layersStyle, position) {
+    // Stockage des "layers"
     let layers = {};
     for (const layer of layersStyle) {
+        // Selon le type de légende voulu, va chercher les options de style et configure l’élément de légende
         if (layer.style.type === 'rectangle') {
             const weight = layer.style.weight ? layer.style.weight : 3;
             const color = layer.style.color ? layer.style.color : 'black';
@@ -406,10 +447,11 @@ async function createLegend(layersStyle) {
                 + 'rgb(from ' + color + ' r g b / ' + opacity + '); '
                 + 'background: rgb(from ' + fillColor + ' r g b / ' + fillOpacity + ');'
                 + '"></div> ' + layer.name;
+            // Doit être async pour charger les layers geojson en requête annexe
             layers[style] = await layer.layer;
         }
     }
-    return L.control.layers(null, layers, {collapsed: false, autoZIndex: true, position: "bottomleft"});
+    return L.control.layers(null, layers, {collapsed: false, autoZIndex: true, position: position});
 }
 
 function scrollSource(scrollData) {

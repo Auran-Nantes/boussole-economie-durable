@@ -594,6 +594,7 @@ Additional CSS for maps elements
     height: unset;
     min-height: unset;
     padding: unset;
+    font-family: Poppins, sans-serif;
 }
 
 .map-legend-rectangle {
@@ -602,4 +603,14 @@ Additional CSS for maps elements
     height: 1rem;
     width: 1.5rem;
     box-sizing: border-box;
+}
+
+.map-title {
+    background-color: var(--color-white);
+    padding: 10px 18px;
+    font-size: 1.3rem;
+    font-family: Poppins, sans-serif;
+    border: 2px solid rgba(0,0,0,0.2);
+    border-radius: 5px;
+    background-clip:  padding-box;
 }

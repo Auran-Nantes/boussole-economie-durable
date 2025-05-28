@@ -496,7 +496,7 @@ const mapLayers = {
 Configurations des légendes, sous forme d’un dictionnaire.
  */
 const mapLegends = {
-    conso_zan: createLegend([
+    conso_zan: [
         {
             name : "Espaces consommés entre 2019 et 2021", layer: mapLayers.conso_zan_zae,
             style: {
@@ -507,8 +507,8 @@ const mapLegends = {
                 fillOpacity: 0.5,
             }
         }
-    ]),
-    cadastre_vert: createLegend([
+    ],
+    cadastre_vert: [
         {
             name: "Végétation arborée", layer: mapLayers.arbres_zae,
             style: {
@@ -529,7 +529,7 @@ const mapLegends = {
                 fillOpacity: 0.5,
             }
         }
-    ]),
+    ],
 };
 
 /*
@@ -543,6 +543,7 @@ Chaque configuration est un objet contenant :
 const mapConfigurations = {
     conso_zan:
         {
+            title: "Consommations d’espace dans les ZAE",
             layers: [mapLayers.osm, mapLayers.conso_zan_zae, mapLayers.zae, mapLayers.communes_nm],
             coordinates: [47.22, -1.56],
             zoom: 12,
@@ -550,6 +551,7 @@ const mapConfigurations = {
         },
     cadastre_vert:
         {
+            title: "Végétation dans les ZAE",
             layers: [mapLayers.osm, mapLayers.arbres_zae, mapLayers.vegetation_autre, mapLayers.zae, mapLayers.communes_nm],
             coordinates: [47.22, -1.56],
             zoom: 12,
@@ -557,6 +559,7 @@ const mapConfigurations = {
         },
     icu:
         {
+            title: "Îlots de chaleur urbains dans les ZAE",
             layers: [mapLayers.osm, mapLayers.icu_zae, mapLayers.zae, mapLayers.communes_nm],
             coordinates: [47.22, -1.56],
             zoom: 12,
