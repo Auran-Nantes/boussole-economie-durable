@@ -2062,7 +2062,7 @@ const chartsConfigurations = {
                 ],
                 formatter: function (name) {
                     if (name === 'Commerce et CHR NM') return 'Nantes Métropole';
-                    if (name === 'Commerce et CHR FR') return 'National';
+                    if (name === 'Commerce et CHR FR') return 'France métropolitaine';
                     return 'Erreur';
                 },
             },
