@@ -2326,7 +2326,7 @@ const chartsConfigurations = {
                     color: colors.blacklighter,
                     symbol: "none",
                     lineStyle: {width: 1},
-                    endLabel: {show: true, formatter: 'Rennes', color: 'inherit', fontSize: 12},
+                    endLabel: {show: true, formatter: '\nRennes', color: 'inherit', fontSize: 12},
                 },
                 {
                     name: 'Autres zones d’emploi métropolitaines',
@@ -2336,7 +2336,7 @@ const chartsConfigurations = {
                     color: colors.blacklighter,
                     symbol: "none",
                     lineStyle: {width: 1},
-                    endLabel: {show: true, formatter: 'Bordeaux', color: 'inherit', fontSize: 12},
+                    endLabel: {show: true, formatter: 'Bordeaux\n', color: 'inherit', fontSize: 12},
                 },
                 {
                     name: 'Autres zones d’emploi métropolitaines',
@@ -2377,6 +2377,400 @@ const chartsConfigurations = {
                 type: 'value', max: 15,
                 axisLabel: {formatter: '{value} %'},
             },
+            textStyle: {
+                fontSize: 14,
+                fontFamily: "Poppins",
+            },
+        },
+    demandeursEmploi:
+        {
+            title: {text: "Demandeurs d’emploi"},
+            tooltip: {},
+            series: [
+                {
+                    name: "Catégorie A",
+                    xAxisIndex: 0,
+                    yAxisIndex: 0,
+                    type: "bar",
+                    itemStyle: {borderRadius: [0, 10, 10, 0], opacity: 0.8},
+                    barWidth: 40,
+                    label: {
+                        show: true,
+                        formatter: "Ensemble des demandeurs d’emploi de catégorie A",
+                        position: "top",
+                        color: "inherit",
+                        overflow: "break",
+                        width: 200
+                    },
+                    data: [[29093,"Catégorie A"]],
+                },
+                {
+                    name: "Moins de 25 ans",
+                    stack: "age",
+                    xAxisIndex: 1,
+                    yAxisIndex: 1,
+                    type: "bar",
+                    color: colors.secondary1,
+                    itemStyle: {opacity: 0.8},
+                    barWidth: 40,
+                    barGap: "-100%",
+                    label: {
+                        show: true,
+                        formatter: "-25 ans",
+                        position: "top",
+                        color: "inherit",
+                        overflow: "break",
+                        width: 70
+                    },
+                    data: [[4344, "Âge"]]
+                },
+                {
+                    name: "25 à 49 ans",
+                    stack: "age",
+                    xAxisIndex: 1,
+                    yAxisIndex: 1,
+                    type: "bar",
+                    color: colors.secondary1light,
+                    itemStyle: {opacity: 0.8},
+                    barWidth: 40,
+                    label: {
+                        show: true,
+                        formatter: "{a}",
+                        position: "top",
+                        color: "inherit",
+                    },
+                    data: [[18775, "Âge"]]
+                },
+                {
+                    name: "Plus de 50 ans",
+                    stack: "age",
+                    xAxisIndex: 1,
+                    yAxisIndex: 1,
+                    type: "bar",
+                    color: colors.secondary1lighter,
+                    itemStyle: {borderRadius: [0, 10, 10, 0], opacity: 0.8},
+                    barWidth: 40,
+                    label: {
+                        show: true,
+                        formatter: "{a}",
+                        position: "top",
+                        color: "inherit",
+                    },
+                    data: [[5974, "Âge"]]
+                },
+                {
+                    name: "Hommes",
+                    stack: "genre",
+                    xAxisIndex: 1,
+                    yAxisIndex: 1,
+                    type: "bar",
+                    color: colors.secondary1,
+                    itemStyle: {opacity: 0.8},
+                    barWidth: 40,
+                    label: {
+                        show: true,
+                        formatter: "{a}",
+                        position: "top",
+                        color: "inherit",
+                        borderColor: null,
+                    },
+                    data: [[15448, "Genre"]]
+                },
+                {
+                    name: "Femmes",
+                    stack: "genre",
+                    xAxisIndex: 1,
+                    yAxisIndex: 1,
+                    type: "bar",
+                    color: colors.secondary1light,
+                    itemStyle: {borderRadius: [0, 10, 10, 0], opacity: 0.8},
+                    barWidth: 40,
+                    label: {
+                        show: true,
+                        formatter: "{a}",
+                        position: "top",
+                        color: "inherit",
+                        borderColor: null,
+                    },
+                    data: [[13645, "Genre"]]
+                },
+                {
+                    name: "Ouvriers non qualifiés",
+                    stack: "Niveau de qualification",
+                    xAxisIndex: 1,
+                    yAxisIndex: 1,
+                    type: "bar",
+                    color: colors.secondary1,
+                    itemStyle: {opacity: 0.8},
+                    barWidth: 40,
+                    label: {
+                        show: true,
+                        formatter: "{a}",
+                        position: "top",
+                        color: "inherit",
+                        borderColor: null,
+                        width: 100,
+                        overflow: "break",
+                        textBorderColor: "white",
+                        textBorderWidth: 4,
+                    },
+                    data: [[2114, "Niveau de qualification"]],
+                },
+                {
+                    name: "Employés non qualifiés",
+                    stack: "Niveau de qualification",
+                    xAxisIndex: 1,
+                    yAxisIndex: 1,
+                    type: "bar",
+                    color: colors.primary1,
+                    itemStyle: {opacity: 0.8},
+                    barWidth: 40,
+                    label: {
+                        show: true,
+                        formatter: "{a}",
+                        position: "bottom",
+                        color: "inherit",
+                        borderColor: null,
+                        width: 100,
+                        overflow: "break",
+                    },
+                    data: [[5990, "Niveau de qualification"]],
+                },
+                {
+                    name: "Ouvriers qualifiés",
+                    stack: "Niveau de qualification",
+                    xAxisIndex: 1,
+                    yAxisIndex: 1,
+                    type: "bar",
+                    color: colors.secondary1light,
+                    itemStyle: {opacity: 0.8},
+                    barWidth: 40,
+                    label: {
+                        show: true,
+                        formatter: "{a}",
+                        position: "top",
+                        color: "inherit",
+                        borderColor: null,
+                        width: 100,
+                        overflow: "break",
+                    },
+                    data: [[1606, "Niveau de qualification"]],
+                },
+                {
+                    name: "Employés qualifiés",
+                    stack: "Niveau de qualification",
+                    xAxisIndex: 1,
+                    yAxisIndex: 1,
+                    type: "bar",
+                    color: colors.primary1light,
+                    itemStyle: {opacity: 0.8},
+                    barWidth: 40,
+                    label: {
+                        show: true,
+                        formatter: "{a}",
+                        position: "bottom",
+                        color: "inherit",
+                        borderColor: null,
+                        width: 100,
+                        overflow: "break",
+                    },
+                    data: [[10767, "Niveau de qualification"]],
+                },
+                {
+                    name: "Techniciens et agents de maîtrise",
+                    stack: "Niveau de qualification",
+                    xAxisIndex: 1,
+                    yAxisIndex: 1,
+                    type: "bar",
+                    color: colors.secondary2,
+                    itemStyle: {opacity: 0.8},
+                    barWidth: 40,
+                    label: {
+                        show: true,
+                        formatter: "{a}",
+                        position: "top",
+                        color: "inherit",
+                        borderColor: null,
+                        width: 100,
+                        overflow: "break",
+                    },
+                    data: [[2637, "Niveau de qualification"]],
+                },
+                {
+                    name: "Cadres",
+                    stack: "Niveau de qualification",
+                    xAxisIndex: 1,
+                    yAxisIndex: 1,
+                    type: "bar",
+                    color: colors.secondary3,
+                    itemStyle: {opacity: 0.8},
+                    barWidth: 40,
+                    label: {
+                        show: true,
+                        formatter: "{a}",
+                        position: "bottom",
+                        color: "inherit",
+                        borderColor: null,
+                        width: 100,
+                        overflow: "break",
+                    },
+                    data: [[5361, "Niveau de qualification"]],
+                },
+                {
+                    name: "Autres",
+                    stack: "Niveau de qualification",
+                    xAxisIndex: 1,
+                    yAxisIndex: 1,
+                    type: "bar",
+                    color: colors.secondary1,
+                    itemStyle: {borderRadius: [0, 10, 10, 0], opacity: 0.8},
+                    barWidth: 40,
+                    label: {
+                        show: true,
+                        formatter: "{a}",
+                        position: "top",
+                        color: "inherit",
+                        borderColor: null,
+                        width: 100,
+                        overflow: "break",
+                    },
+                    data: [[618, "Niveau de qualification"]],
+                },
+            ],
+            grid: [
+                {bottom: "72%", left: 90}, {top: "33%", left: 90},
+            ],
+            xAxis: [
+                {
+                    gridIndex: 0,
+                    axisLabel: {show: false},
+                    min: 0, max: 30000,
+                },
+                {gridIndex: 1, min: 0, max: 30000, position: "top"},
+            ],
+            yAxis: [
+                {
+                    gridIndex: 0,
+                    type: "category",
+                    axisLabel: {width: 80, overflow: "break", align: "right"},
+                    data: [{value: "Catégorie A"}]
+                },
+                {
+                    gridIndex: 1,
+                    type: "category",
+                    axisLabel: {width: 80, overflow: "break", align: "right"},
+                    inverse: true,
+                    data: [
+                        {value: "Âge"},
+                        {value: "Genre"},
+                        {value: "Niveau de qualification"},
+                    ]
+                },
+            ],
+            color: colors.secondary1,
+            textStyle: {
+                fontSize: 14,
+                fontFamily: "Poppins",
+            },
+        },
+    demandeursEmploiDureeRSA:
+        {
+            title: {text: "Demandeurs d’emploi"},
+            tooltip: {},
+            series: [
+                {
+                    name: "Catégorie A",
+                    xAxisIndex: 0,
+                    yAxisIndex: 0,
+                    type: "bar",
+                    itemStyle: {borderRadius: [0, 10, 10, 0], opacity: 0.8},
+                    barWidth: 40,
+                    label: {
+                        show: true,
+                        formatter: "Ensemble des demandeurs d’emploi de catégorie A",
+                        position: "top",
+                        color: "inherit",
+                        overflow: "break",
+                        width: 200
+                    },
+                    data: [[29093,"Catégorie A"]],
+                },
+                {
+                    name: "Longue durée",
+                    xAxisIndex: 1,
+                    yAxisIndex: 1,
+                    type: "bar",
+                    color: colors.secondary1,
+                    itemStyle: {borderRadius: [0, 10, 10, 0], opacity: 0.8},
+                    barWidth: 40,
+                    barGap: "-100%",
+                    label: {
+                        show: true,
+                        position: "right",
+                        color: "inherit",
+                    },
+                    data: [[8725, "Longue durée"]]
+                },
+                {
+                    name: "Bénéficiaires du RSA",
+                    xAxisIndex: 1,
+                    yAxisIndex: 1,
+                    type: "bar",
+                    color: colors.secondary1,
+                    itemStyle: {borderRadius: [0, 10, 10, 0], opacity: 0.8},
+                    barWidth: 40,
+                    barGap: "-100%",
+                    label: {
+                        show: true,
+                        position: "right",
+                        color: "inherit",
+                    },
+                    data: [[8236, "Bénéficiaires du RSA"]]
+                },
+                {
+                    name: "Background",
+                    silent: true,
+                    xAxisIndex: 1,
+                    yAxisIndex: 1,
+                    type: "bar",
+                    color: colors.blacklighter,
+                    itemStyle: {borderRadius: [0, 10, 10, 0], opacity: 0.4},
+                    z: 1,
+                    barWidth: 40,
+                    barGap: "-100%",
+                    data: [[29093, "Longue durée"],[29093, "Bénéficiaires du RSA"]]
+                },
+            ],
+            grid: [
+                {bottom: "72%", left: 90}, {top: "33%", left: 90},
+            ],
+            xAxis: [
+                {
+                    gridIndex: 0,
+                    axisLabel: {show: false},
+                    min: 0, max: 30000,
+                },
+                {gridIndex: 1, min: 0, max: 30000, position: "top"},
+            ],
+            yAxis: [
+                {
+                    gridIndex: 0,
+                    type: "category",
+                    axisLabel: {width: 80, overflow: "break", align: "right"},
+                    data: [{value: "Catégorie A"}]
+                },
+                {
+                    gridIndex: 1,
+                    type: "category",
+                    axisLabel: {width: 80, overflow: "break", align: "right"},
+                    inverse: true,
+                    data: [
+                        {value: "Longue durée"},
+                        {value: "Bénéficiaires du RSA"},
+                    ]
+                },
+            ],
+            color: colors.secondary1,
             textStyle: {
                 fontSize: 14,
                 fontFamily: "Poppins",
@@ -2586,7 +2980,7 @@ const hooks = {
         // système ci-dessous en "post-hook"
         let s = document.createElement("script");
         s.src = "https://public.flourish.studio/resources/embed.js";
-        let e =document.getElementById("interdecile-flourish-div");
+        let e = document.getElementById("interdecile-flourish-div");
         e.appendChild(s);
     }
 };

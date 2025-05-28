@@ -85,7 +85,7 @@
                               scroll-source="Taux de chômage localisé, Insee">
                     <p class="stick-to-top stick-to-title has-background-white min-half-height">
                         Parmi les principales zones d’emploi françaises, Nantes affiche le taux de chômage le plus bas,
-                        devant Lyon et Bordeaux.
+                        devant Rennes, Lyon et Bordeaux.
                     </p>
                     <div class="min-full-height"></div>
                 </scroll-scene>
@@ -96,31 +96,38 @@
     <section>
         <h1 class="stick-to-top sticky-title has-background-white"><span>Profil des demandeurs d’emploi</span></h1>
         <div class="columns stick-to-top stick-to-title has-background-white">
+            <div class="column stick-to-top stick-to-title">
+                <figure id="demandeurs-emploi" class="min-full-height with-title"></figure>
+                <p class="source centered"></p>
+            </div>
             <div class="column">
-                <scroll-scene>
-                    <p>
+                <scroll-scene scroll-figure="demandeurs-emploi" scroll-type="chart" scroll-chart-name="demandeursEmploi"
+                              scroll-source="France Travail - Nantes Métropole - T4 2024">
+                    <p class="stick-to-top stick-to-title">
                         Sur Nantes Métropole, cela représente 29 100 demandeurs d’emploi de catégorie A (aucune activité
                         au cours du mois écoulé). Mais la population est inégalement concernée, et l'âge, le genre ou
                         encore le niveau de diplôme font varier la proportion de demandeurs d'emploi.
                     </p>
-                    <p>
+                    <div class="min-full-height"></div>
+                </scroll-scene>
+                <scroll-scene scroll-figure="demandeurs-emploi" scroll-type="chart"
+                              scroll-chart-name="demandeursEmploiDureeRSA"
+                              scroll-source="France Travail - Nantes Métropole - T4 2024">
+                    <p class="stick-to-top stick-to-title sticky-stack">
                         Parmi ces demandeurs, près d'un tiers d'entre eux sont demandeurs de longue durée, c'est-à-dire
                         inscrits depuis plus d'un an (environ 8 700 personnes). Une proportion similaire (28 % des
                         demandeurs) était bénéficiaire du RSA (revenu de solidarité active).
                     </p>
-                    <p>
+                    <div class="min-full-height"></div>
+                    <p class="stick-to-top stick-to-title sticky-stack">
                         Ces chiffres soulignent l’enjeu des difficultés d’insertion professionnelle, même au sein d’un
                         territoire affichant un taux de chômage bas et de fortes créations d’emplois.
                     </p>
+                    <div class="min-full-height"></div>
                 </scroll-scene>
                 <scroll-scene>
-                    <p>
-
-                    </p>
+                    <div class="min-full-height"></div>
                 </scroll-scene>
-            </div>
-            <div class="column is-size-2 stick-to-top stick-to-title">
-                <figure id="demandeurs-emploi" class="min-full-height with-title"></figure>
             </div>
         </div>
     </section>
