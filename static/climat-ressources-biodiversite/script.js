@@ -530,6 +530,12 @@ const mapLegends = {
             }
         }
     ],
+    icu: [
+        {
+            layer: mapLayers.icu_zae,
+            style: {type: "image-only", img: "static/climat-ressources-biodiversite/legende_icu.png"}
+        }
+    ],
 };
 
 /*
@@ -563,6 +569,7 @@ const mapConfigurations = {
             layers: [mapLayers.osm, mapLayers.icu_zae, mapLayers.zae, mapLayers.communes_nm],
             coordinates: [47.22, -1.56],
             zoom: 12,
+            legend: mapLegends.icu,
         }
 };
 

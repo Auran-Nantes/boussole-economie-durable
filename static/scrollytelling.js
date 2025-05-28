@@ -436,20 +436,29 @@ async function createLegend(layersStyle, position) {
     let layers = {};
     for (const layer of layersStyle) {
         // Selon le type de légende voulu, va chercher les options de style et configure l’élément de légende
-        if (layer.style.type === 'rectangle') {
-            const weight = layer.style.weight ? layer.style.weight : 3;
-            const color = layer.style.color ? layer.style.color : 'black';
-            const fillColor = layer.style.fillColor ? layer.style.fillColor : color;
-            const opacity = layer.style.opacity ? layer.style.opacity : 1;
-            const fillOpacity = layer.style.fillOpacity ? layer.style.fillOpacity : 0.7;
-            let style = '<div class="map-legend-rectangle" style="'
-                + 'border: ' + weight + 'px solid '
-                + 'rgb(from ' + color + ' r g b / ' + opacity + '); '
-                + 'background: rgb(from ' + fillColor + ' r g b / ' + fillOpacity + ');'
-                + '"></div> ' + layer.name;
-            // Doit être async pour charger les layers geojson en requête annexe
-            layers[style] = await layer.layer;
+        let style = "";
+        switch (layer.style.type) {
+            case ('rectangle') :
+                const weight = layer.style.weight ? layer.style.weight : 3;
+                const color = layer.style.color ? layer.style.color : 'black';
+                const fillColor = layer.style.fillColor ? layer.style.fillColor : color;
+                const opacity = layer.style.opacity ? layer.style.opacity : 1;
+                const fillOpacity = layer.style.fillOpacity ? layer.style.fillOpacity : 0.7;
+                style = '<div class="map-legend-rectangle" style="'
+                    + 'border: ' + weight + 'px solid '
+                    + 'rgb(from ' + color + ' r g b / ' + opacity + '); '
+                    + 'background: rgb(from ' + fillColor + ' r g b / ' + fillOpacity + ');'
+                    + '"></div> ' + layer.name;
+                break;
+            case ("image-only") :
+                const link = layer.style.img;
+                console.log(link);
+                style = '<img src="' + link + '" />';
+                break;
         }
+        // Doit être async pour charger les layers geojson en requête annexe
+        console.log(style);
+        layers[style] = await layer.layer;
     }
     return L.control.layers(null, layers, {collapsed: false, autoZIndex: true, position: position});
 }
