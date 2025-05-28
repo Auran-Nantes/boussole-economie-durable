@@ -46,6 +46,8 @@ body {
     --header-height: 110px;
     --footer-height: 90px;
     --footer-color: var(--color-primary-1);
+    --footer-color-light: var(--color-primary-1-light);
+    --footer-color-lighter: var(--color-primary-1-lighter);
     --normal-max-width: 1200px;
     --font-size-bold: 600;
     /* Max width of a key-value
@@ -213,18 +215,21 @@ header {
 Footer
 ------------------------------------------ */
 footer {
+    --section-color:  var(--footer-color);
+    --section-color-light: var(--footer-color-light);
+    --section-color-lighter: var(--footer-color-lighter);
     height: var(--footer-height);
     bottom: 0;
     background: radial-gradient(circle at bottom, var(--footer-color) var(--footer-height), transparent var(--footer-height));
+    text-align:  center;
 
     nav {
         height: 80%;
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-end;
-        gap: 2rem;
-        padding: 0 10px;
-        text-align: center;
+        display: grid;
+        grid-template-columns: 1fr 1fr calc(2 * var(--footer-height)) 1fr 1fr;
+        grid-auto-rows: calc(0.8 * var(--footer-height));
+        align-items: center;
+        justify-items:  center;
 
         > * {
             padding-bottom: 5px;
@@ -233,7 +238,6 @@ footer {
         .auran-link {
             height: var(--footer-height);
             width: var(--footer-height);
-            flex: 0 0 var(--footer-height);
             margin-bottom: calc(-0.1 * var(--footer-height));
             background: bottom / 70% no-repeat url("./auran-logoblanc.png");
         }
