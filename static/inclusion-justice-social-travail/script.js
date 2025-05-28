@@ -3062,6 +3062,7 @@ Chaque configuration est un objet contenant :
  */
 const mapConfigurations = {
     entreprises: {
+        title: "Structures d’insertion",
         layers: [mapLayers.osm, mapLayers.siae],
         coordinates: [47.22, -1.56],
         zoom: 12,
