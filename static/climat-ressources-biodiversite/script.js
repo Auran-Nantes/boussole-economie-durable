@@ -44,7 +44,7 @@ const chartsConfigurations = {
     emissionsAnnuellesNM:
         {
             title: {
-                text: 'Une diminution progressive des émissions de gaz à effet de serre',
+                text: 'Évolution des émissions de gaz à effet de serre',
             },
             grid: {
                 right: 105,
@@ -93,7 +93,7 @@ const chartsConfigurations = {
     emissionsAnnuellesActEco:
         {
             title: {
-                text: 'Une diminution progressive des émissions de gaz à effet de serre',
+                text: 'Évolution des émissions de gaz à effet de serre',
             },
             grid: {
                 right: 105,

@@ -1993,7 +1993,7 @@ const data = {
     ],
     tauxEmploi:
         [
-            ["Statut", "15-64 ans", "15-24 ans", "25-54 ans", "55-64 ans", "Hommes", "Femmes"],
+            ["Statut", "Ensemble\n(15-64 ans)", "15-24 ans", "25-54 ans", "55-64 ans", "Hommes", "Femmes"],
             ["Emploi", 67.1, 31.8, 82.8, 57.6, 69.3, 65.0],
         ],
 };
@@ -2032,6 +2032,7 @@ const chartsConfigurations = {
                 name: 'Année',
                 min: '2006',
                 max: '2023',
+                axisLabel: {showMinLabel: true, showMaxLabel: true},
             },
             yAxis: {
                 type: 'value',
@@ -2195,10 +2196,14 @@ const chartsConfigurations = {
                 },
             ],
             xAxis: [
-                {gridIndex: 0, type: 'time', min: '2006', max: '2023'},
-                {gridIndex: 1, type: 'time', min: '2006', max: '2023'},
-                {gridIndex: 2, type: 'time', min: '2006', max: '2023'},
-                {gridIndex: 3, type: 'time', min: '2006', max: '2023'},
+                {gridIndex: 0, type: 'time', min: '2006', max: '2023',
+                    axisLabel: {showMinLabel: true, showMaxLabel: true},},
+                {gridIndex: 1, type: 'time', min: '2006', max: '2023',
+                    axisLabel: {showMinLabel: true, showMaxLabel: true},},
+                {gridIndex: 2, type: 'time', min: '2006', max: '2023',
+                    axisLabel: {showMinLabel: true, showMaxLabel: true},},
+                {gridIndex: 3, type: 'time', min: '2006', max: '2023',
+                    axisLabel: {showMinLabel: true, showMaxLabel: true},},
             ],
             yAxis: [
                 {
@@ -2809,7 +2814,7 @@ const chartsConfigurations = {
                 {
                     gridIndex: 0,
                     type: "category",
-                    data: [{value: "15-64 ans"}]
+                    data: [{value: "Ensemble\n(15-64 ans)"}]
                 },
                 {
                     gridIndex: 1,
@@ -2859,7 +2864,7 @@ const chartsConfigurations = {
                     barWidth: 40,
                     markLine: {
                         symbol: 'none',
-                        label: {show: true, formatter: "15-64\nans"},
+                        label: {show: true, formatter: "Ensemble", position: "insideEndTop"},
                         lineStyle: {
                             color: "#555555",
                             width: 2,
@@ -2875,7 +2880,7 @@ const chartsConfigurations = {
                 {
                     gridIndex: 0,
                     type: "category",
-                    data: [{value: "15-64 ans"}]
+                    data: [{value: "Ensemble\n(15-64 ans)"}]
                 },
                 {
                     gridIndex: 1,
@@ -2929,7 +2934,7 @@ const chartsConfigurations = {
                     barWidth: 40,
                     markLine: {
                         symbol: 'none',
-                        label: {show: true, formatter: "15-64\nans"},
+                        label: {show: true, formatter: "Ensemble", position: "insideEndTop"},
                         lineStyle: {
                             color: "#555555",
                             width: 2,
@@ -2945,7 +2950,7 @@ const chartsConfigurations = {
                 {
                     gridIndex: 0,
                     type: "category",
-                    data: [{value: "15-64 ans"}]
+                    data: [{value: "Ensemble\n(15-64 ans)"}]
                 },
                 {
                     gridIndex: 1,
