@@ -417,7 +417,7 @@ const mapLayers = {
         osm: L.tileLayer('https://b.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
             maxZoom: 19,
             attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-            opacity: 0.8,
+            opacity: 0.7,
             /* Quelques autres liens pour layer de base utilisables :
             Fond OpenStreetMap par défaut :
             https://tile.openstreetmap.org/{z}/{x}/{y}.png
@@ -468,7 +468,7 @@ const mapLayers = {
                         color: '#7a8427',
                         weight: 1,
                         opacity: 0.8,
-                        fillOpacity: 0.5,
+                        fillOpacity: 0.7,
                     }
                 }
             ),
@@ -477,9 +477,9 @@ const mapLayers = {
                 {
                     style: {
                         color: '#ced77b',
-                        weight: 1,
+                        weight: 0,
                         opacity: 0.8,
-                        fillOpacity: 0.5,
+                        fillOpacity: 0.7,
                     }
                 }
             ),
