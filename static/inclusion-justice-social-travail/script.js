@@ -2057,12 +2057,12 @@ const chartsConfigurations = {
                 top: 'bottom',
                 selectedMode: false,
                 data: [
-                    {name: 'Commerce et CHR NM'},
-                    {name: 'Commerce et CHR FR'},
+                    {name: 'Commerces et CHR NM'},
+                    {name: 'Commerces et CHR FR'},
                 ],
                 formatter: function (name) {
-                    if (name === 'Commerce et CHR NM') return 'Nantes Métropole';
-                    if (name === 'Commerce et CHR FR') return 'France métropolitaine';
+                    if (name === 'Commerces et CHR NM') return 'Nantes Métropole';
+                    if (name === 'Commerces et CHR FR') return 'France métropolitaine';
                     return 'Erreur';
                 },
             },
@@ -2082,7 +2082,7 @@ const chartsConfigurations = {
             },
             series: [
                 {
-                    name: 'Commerce et CHR NM',
+                    name: 'Commerces et CHR NM',
                     xAxisIndex: 1,
                     yAxisIndex: 1,
                     type: 'line',
@@ -2102,7 +2102,7 @@ const chartsConfigurations = {
                     },
                 },
                 {
-                    name: 'Commerce et CHR FR',
+                    name: 'Commerces et CHR FR',
                     xAxisIndex: 1,
                     yAxisIndex: 1,
                     type: 'line',
@@ -2219,7 +2219,7 @@ const chartsConfigurations = {
                     type: 'value',
                     min: 80,
                     max: 160,
-                    name: 'Commerce et CHR',
+                    name: 'Commerces et CHR',
                     nameTextStyle: {align: 'left'}
                 },
                 {
