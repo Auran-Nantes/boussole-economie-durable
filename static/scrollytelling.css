@@ -216,13 +216,13 @@ header {
 Footer
 ------------------------------------------ */
 footer {
-    --section-color:  var(--footer-color);
+    --section-color: var(--footer-color);
     --section-color-light: var(--footer-color-light);
     --section-color-lighter: var(--footer-color-lighter);
     height: var(--footer-height);
     bottom: 0;
     background: radial-gradient(circle at bottom, var(--footer-color) var(--footer-height), transparent var(--footer-height));
-    text-align:  center;
+    text-align: center;
 
     nav {
         height: 80%;
@@ -230,7 +230,7 @@ footer {
         grid-template-columns: 1fr 1fr calc(2 * var(--footer-height)) 1fr 1fr;
         grid-auto-rows: calc(0.8 * var(--footer-height));
         align-items: center;
-        justify-items:  center;
+        justify-items: center;
 
         > * {
             padding-bottom: 5px;
@@ -612,7 +612,40 @@ Additional CSS for maps elements
     font-size: 18px;
     font-weight: bolder;
     font-family: Poppins, sans-serif;
-    border: 2px solid rgba(0,0,0,0.2);
+    border: 2px solid rgba(0, 0, 0, 0.2);
     border-radius: 5px;
-    background-clip:  padding-box;
+    background-clip: padding-box;
+}
+
+/* -------------------------
+Avertissements
+Pour navigateurs incompatibles
+------------------------- */
+
+.warning-mobile {
+    display: none;
+    padding: 20px 20px;
+    font-size: 1.5rem;
+    color: darkred;
+    --section-color: darkred;
+}
+
+@media (orientation: portrait) or (width < 1000px) or (height < 800) {
+    .warning-mobile {
+        display: block;
+    }
+}
+
+.warning-css {
+    display: none;
+    padding: 20px 20px;
+    font-size: 1.5rem;
+    color: darkred;
+    --section-color: darkred;
+}
+
+@supports not selector(&) {
+    .warning-css {
+        display: block;
+    }
 }
