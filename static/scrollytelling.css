@@ -644,7 +644,13 @@ Pour navigateurs incompatibles
     --section-color: darkred;
 }
 
-@supports not selector(&) {
+@supports not (selector(&)) {
+    .warning-css {
+        display: block;
+    }
+}
+
+@supports not (selector(&)) {
     .warning-css {
         display: block;
     }
