@@ -284,7 +284,7 @@ const chartsConfigurations = {
             },
             yAxis: {
                 type: 'value',
-                name: 't.eqCO2',
+                name: 'kt.eqCO2',
                 nameGap: 30,
                 axisLabel: {show: false},
                 splitLine: {show: false},
@@ -386,7 +386,7 @@ const chartsConfigurations = {
             },
             yAxis: {
                 type: 'value',
-                name: 't.eqCO2',
+                name: 'kt.eqCO2',
                 nameGap: 30,
                 axisLabel: {show: false},
                 splitLine: {show: false},
