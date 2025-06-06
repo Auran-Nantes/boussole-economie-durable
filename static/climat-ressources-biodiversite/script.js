@@ -159,7 +159,7 @@ const chartsConfigurations = {
         },
     emissionsSousSecteurs:
         {
-            title: {text: "Émissions par secteur professionnel"},
+            title: {text: "Émissions par secteur d’activités"},
             grid: {
                 right: "25%",
                 left: "25%",
@@ -298,7 +298,7 @@ const chartsConfigurations = {
         },
     emissionsSousSecteursEmphase:
         {
-            title: {text: "Émissions par secteur professionnel"},
+            title: {text: "Émissions par secteur d’activités"},
             grid: {
                 right: "25%",
                 left: "25%",

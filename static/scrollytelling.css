@@ -552,6 +552,10 @@ figure > img {
     object-fit: contain;
     display: block;
     margin: auto;
+
+    &.with-title {
+        height: calc(100% - 2 * (7px + 2px) - 2 * 18px - 10px);
+    }
 }
 
 /* ------------------------
@@ -615,6 +619,7 @@ Additional CSS for maps elements
     border: 2px solid rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     background-clip: padding-box;
+    display: inline-block;
 }
 
 /* -------------------------

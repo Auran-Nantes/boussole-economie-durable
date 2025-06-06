@@ -2304,6 +2304,7 @@ const chartsConfigurations = {
                     color: colors.secondary1,
                     symbol: "none",
                     lineStyle: {width: 3},
+                    endLabel: {show: true, formatter: 'Nantes', color: 'inherit', fontSize: 12},
                 },
                 {
                     name: 'Autres zones d’emploi métropolitaines',
@@ -2370,6 +2371,7 @@ const chartsConfigurations = {
                     color: colors.blacklighter,
                     symbol: "none",
                     lineStyle: {width: 1},
+                    endLabel: {show: true, formatter: 'Marseille', color: 'inherit', fontSize: 12},
                 },
             ],
             xAxis: {
