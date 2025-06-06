@@ -270,6 +270,30 @@ Hero : pleine page type première page
     }
 }
 
+/* ------------------------------------------
+Indicateur de scroll
+------------------------------------------ */
+.scroll-indicator {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    bottom: 15px;
+    left: calc(50vw - 50px);
+    background-image: url("./scroll-indicator.svg");
+    animation: 1s ease-in-out infinite alternate clignote;
+    z-index: 2;
+}
+
+@keyframes clignote {
+    from {
+        opacity: 100%;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
 
 /* ------------------------------------------
 Sections
