@@ -549,7 +549,7 @@ Chaque configuration est un objet contenant :
 const mapConfigurations = {
     conso_zan:
         {
-            title: "Consommations d’espace dans les ZAE",
+            title: "Consommation d’espaces dans les ZAE",
             layers: [mapLayers.osm, mapLayers.conso_zan_zae, mapLayers.zae, mapLayers.communes_nm],
             coordinates: [47.22, -1.56],
             zoom: 12,
