@@ -498,7 +498,7 @@ Configurations des légendes, sous forme d’un dictionnaire.
 const mapLegends = {
     conso_zan: [
         {
-            name : "Espaces consommés entre 2019 et 2021", layer: mapLayers.conso_zan_zae,
+            name : "Espaces consommés entre 2009 et 2020", layer: mapLayers.conso_zan_zae,
             style: {
                 type: "rectangle",
                 color: '#b83c26',
