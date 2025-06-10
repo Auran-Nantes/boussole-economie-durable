@@ -52,7 +52,7 @@ const chartsConfigurations = {
     creationsEtablissements: {
         title: {text: "Création d’établissements sur Nantes Métropole"},
         grid: {},
-        tooltip: {},
+        tooltip: {valueFormatter: (value) => value.toLocaleString()},
         dataset: {dimensions: ["annee", "creationsetab"], source: data.entreprises},
         series: [
             {
@@ -65,14 +65,14 @@ const chartsConfigurations = {
             },
         ],
         xAxis: {type: "time", name: "Année", min: "2012", max: "2023"},
-        yAxis: {type: "value"},
+        yAxis: {type: "value", axisLabel: {formatter: (value) => value.toLocaleString()}},
         textStyle: {fontSize: 14, fontFamily: "Poppins"},
         color: [colors.secondary1],
     },
     defaillancesEntreprises: {
         title: {text: "Défaillances d’entreprises"},
         grid: {},
-        tooltip: {},
+        tooltip: {trigger: "axis"},
         legend: {top: "bottom"},
         dataset: {dimensions: ["annee", "redressements", "liquidations"], source: data.entreprises},
         series: [
@@ -101,7 +101,7 @@ const chartsConfigurations = {
     ess: {
         title: {text: "L’Économie Sociale et Solidaire à Nantes Métropole"},
         grid: {right: 120},
-        tooltip: {},
+        tooltip: {valueFormatter: (value) => value.toFixed(0).toLocaleString(), trigger: "axis"},
         dataset: {
             dimensions: ["annee", "emploiess", "emploiprivehorsess", "etabess", "etabprivehorsess"],
             source: data.ess

@@ -49,7 +49,7 @@ const chartsConfigurations = {
             grid: {
                 right: 105,
             },
-            tooltip: {},
+            tooltip: {valueFormatter: (value) => value.toLocaleString() + " kt.eqCO2"},
             dataset: {
                 dimensions: ['annee', 'emissions', 'actEco'],
                 source: data.emissionsAnnuellesNM,
@@ -84,6 +84,7 @@ const chartsConfigurations = {
             yAxis: {
                 type: 'value',
                 name: 'Émissions (kt.eqCO2)',
+                axisLabel: {formatter: (value) => value.toLocaleString()},
             },
             textStyle: {
                 fontSize: 14,
@@ -98,7 +99,7 @@ const chartsConfigurations = {
             grid: {
                 right: 105,
             },
-            tooltip: {},
+            tooltip: {valueFormatter: (value) => value.toLocaleString() + " kt.eqCO2"},
             dataset: {
                 dimensions: ['annee', 'emissions', 'actEco'],
                 source: data.emissionsAnnuellesNM,
@@ -151,6 +152,7 @@ const chartsConfigurations = {
             yAxis: {
                 type: 'value',
                 name: 'Émissions (kt.eqCO2)',
+                axisLabel: {formatter: (value) => value.toLocaleString()},
             },
             textStyle: {
                 fontSize: 14,
@@ -166,7 +168,7 @@ const chartsConfigurations = {
                 bottom: "10%",
                 top: "20%"
             },
-            tooltip: {},
+            tooltip: {valueFormatter: (value) => value.toLocaleString() + " kt.eqCO2"},
             dataset: {
                 dimensions: ['annee', 'transport', 'tertiaire', 'industrie', 'agriculture', 'autres'],
                 source: data.emissionsSousSecteurs,
@@ -305,7 +307,7 @@ const chartsConfigurations = {
                 bottom: "10%",
                 top: "20%"
             },
-            tooltip: {},
+            tooltip: {valueFormatter: (value) => value.toLocaleString() + " kt.eqCO2"},
             dataset: {
                 dimensions: ['annee', 'transport', 'tertiaire', 'industrie', 'agriculture', 'autres'],
                 source: data.emissionsSousSecteurs,

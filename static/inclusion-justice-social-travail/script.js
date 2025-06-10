@@ -2007,7 +2007,7 @@ const chartsConfigurations = {
                 text: 'Évolution de l’emploi salarié privé',
             },
             grid: {},
-            tooltip: {},
+            tooltip: {valueFormatter: (value) => value.toLocaleString()},
             legend: {
                 top: 'bottom',
             },
@@ -2037,6 +2037,7 @@ const chartsConfigurations = {
             yAxis: {
                 type: 'value',
                 name: 'Emploi',
+                axisLabel: {formatter: (value) => value.toLocaleString()},
             },
             textStyle: {
                 fontSize: 14,
@@ -2052,7 +2053,7 @@ const chartsConfigurations = {
                 {right: '55%', top: '55%'},
                 {left: '55%', top: '55%'},
             ],
-            tooltip: {},
+            tooltip: {valueFormatter: (value) => value.toFixed(1)},
             legend: {
                 top: 'bottom',
                 selectedMode: false,
@@ -2196,14 +2197,22 @@ const chartsConfigurations = {
                 },
             ],
             xAxis: [
-                {gridIndex: 0, type: 'time', min: '2006', max: '2023',
-                    axisLabel: {showMinLabel: true, showMaxLabel: true},},
-                {gridIndex: 1, type: 'time', min: '2006', max: '2023',
-                    axisLabel: {showMinLabel: true, showMaxLabel: true},},
-                {gridIndex: 2, type: 'time', min: '2006', max: '2023',
-                    axisLabel: {showMinLabel: true, showMaxLabel: true},},
-                {gridIndex: 3, type: 'time', min: '2006', max: '2023',
-                    axisLabel: {showMinLabel: true, showMaxLabel: true},},
+                {
+                    gridIndex: 0, type: 'time', min: '2006', max: '2023',
+                    axisLabel: {showMinLabel: true, showMaxLabel: true},
+                },
+                {
+                    gridIndex: 1, type: 'time', min: '2006', max: '2023',
+                    axisLabel: {showMinLabel: true, showMaxLabel: true},
+                },
+                {
+                    gridIndex: 2, type: 'time', min: '2006', max: '2023',
+                    axisLabel: {showMinLabel: true, showMaxLabel: true},
+                },
+                {
+                    gridIndex: 3, type: 'time', min: '2006', max: '2023',
+                    axisLabel: {showMinLabel: true, showMaxLabel: true},
+                },
             ],
             yAxis: [
                 {
@@ -2243,7 +2252,7 @@ const chartsConfigurations = {
                 text: 'Évolution du taux de chômage',
             },
             grid: {right: 90},
-            tooltip: {},
+            tooltip: {trigger: "axis", valueFormatter: (value) => value.toLocaleString() + " %"},
             legend: {top: 'bottom'},
             dataset: {dimensions: ['trimestre', "nantes", "france"], source: data.chomage},
             series: [
@@ -2285,9 +2294,19 @@ const chartsConfigurations = {
                 text: 'Évolution du taux de chômage',
             },
             grid: {right: 90},
-            tooltip: {},
+            tooltip: {trigger: "axis", valueFormatter: (value) => value.toLocaleString() + " %", order: "valueAsc"},
             legend: {
                 top: 'bottom',
+                selectedMode: false,
+                data: [
+                    {name: 'Nantes'},
+                    {name: 'Lille'},
+                ],
+                formatter: function (name) {
+                    if (name === 'Nantes') return 'Zone d’emploi de Nantes';
+                    if (name === 'Lille') return 'Autres zones d’emploi métropolitaines';
+                    return 'Erreur';
+                },
             },
             dataset: {
                 dimensions: ['trimestre', "nantes", "france", "paris", "orleans", "tours", "dijon", "rouen",
@@ -2297,7 +2316,7 @@ const chartsConfigurations = {
             },
             series: [
                 {
-                    name: 'Zone d’emploi de Nantes',
+                    name: 'Nantes',
                     type: 'line',
                     smooth: true,
                     encode: {x: 'trimestre', y: 'nantes'},
@@ -2307,7 +2326,7 @@ const chartsConfigurations = {
                     endLabel: {show: true, formatter: 'Nantes', color: 'inherit', fontSize: 12},
                 },
                 {
-                    name: 'Autres zones d’emploi métropolitaines',
+                    name: 'Lille',
                     type: 'line',
                     smooth: true,
                     encode: {x: 'trimestre', y: 'lille'},
@@ -2316,7 +2335,7 @@ const chartsConfigurations = {
                     lineStyle: {width: 1},
                 },
                 {
-                    name: 'Autres zones d’emploi métropolitaines',
+                    name: 'Strasbourg',
                     type: 'line',
                     smooth: true,
                     encode: {x: 'trimestre', y: 'strasbourg'},
@@ -2325,7 +2344,7 @@ const chartsConfigurations = {
                     lineStyle: {width: 1},
                 },
                 {
-                    name: 'Autres zones d’emploi métropolitaines',
+                    name: 'Rennes',
                     type: 'line',
                     smooth: true,
                     encode: {x: 'trimestre', y: 'rennes'},
@@ -2335,7 +2354,7 @@ const chartsConfigurations = {
                     endLabel: {show: true, formatter: '\nRennes', color: 'inherit', fontSize: 12},
                 },
                 {
-                    name: 'Autres zones d’emploi métropolitaines',
+                    name: 'Bordeaux',
                     type: 'line',
                     smooth: true,
                     encode: {x: 'trimestre', y: 'bordeaux'},
@@ -2345,7 +2364,7 @@ const chartsConfigurations = {
                     endLabel: {show: true, formatter: 'Bordeaux\n', color: 'inherit', fontSize: 12},
                 },
                 {
-                    name: 'Autres zones d’emploi métropolitaines',
+                    name: 'Toulouse',
                     type: 'line',
                     smooth: true,
                     encode: {x: 'trimestre', y: 'toulouse'},
@@ -2354,7 +2373,7 @@ const chartsConfigurations = {
                     lineStyle: {width: 1},
                 },
                 {
-                    name: 'Autres zones d’emploi métropolitaines',
+                    name: 'Lyon',
                     type: 'line',
                     smooth: true,
                     encode: {x: 'trimestre', y: 'lyon'},
@@ -2364,7 +2383,7 @@ const chartsConfigurations = {
                     endLabel: {show: true, formatter: 'Lyon', color: 'inherit', fontSize: 12},
                 },
                 {
-                    name: 'Autres zones d’emploi métropolitaines',
+                    name: 'Marseille',
                     type: 'line',
                     smooth: true,
                     encode: {x: 'trimestre', y: 'marseille'},
@@ -2392,7 +2411,7 @@ const chartsConfigurations = {
     demandeursEmploi:
         {
             title: {text: "Demandeurs d’emploi"},
-            tooltip: {},
+            tooltip: {valueFormatter: (value) => value.toLocaleString()},
             series: [
                 {
                     name: "Catégorie A",
@@ -2409,7 +2428,7 @@ const chartsConfigurations = {
                         overflow: "break",
                         width: 200
                     },
-                    data: [[29093,"Catégorie A"]],
+                    data: [[29093, "Catégorie A"]],
                 },
                 {
                     name: "Moins de 25 ans",
@@ -2653,7 +2672,13 @@ const chartsConfigurations = {
                     axisLabel: {show: false},
                     min: 0, max: 30000,
                 },
-                {gridIndex: 1, min: 0, max: 30000, position: "top"},
+                {
+                    gridIndex: 1,
+                    min: 0,
+                    max: 30000,
+                    position: "top",
+                    axisLabel: {formatter: (value) => value.toLocaleString()},
+                }
             ],
             yAxis: [
                 {
@@ -2683,7 +2708,7 @@ const chartsConfigurations = {
     demandeursEmploiDureeRSA:
         {
             title: {text: "Demandeurs d’emploi"},
-            tooltip: {},
+            tooltip: {valueFormatter: (value) => value.toLocaleString()},
             series: [
                 {
                     name: "Catégorie A",
@@ -2700,7 +2725,7 @@ const chartsConfigurations = {
                         overflow: "break",
                         width: 200
                     },
-                    data: [[29093,"Catégorie A"]],
+                    data: [[29093, "Catégorie A"]],
                 },
                 {
                     name: "Longue durée",
@@ -2745,7 +2770,7 @@ const chartsConfigurations = {
                     z: 1,
                     barWidth: 40,
                     barGap: "-100%",
-                    data: [[29093, "Longue durée"],[29093, "Bénéficiaires du RSA"]]
+                    data: [[29093, "Longue durée"], [29093, "Bénéficiaires du RSA"]]
                 },
             ],
             grid: [
@@ -2757,7 +2782,13 @@ const chartsConfigurations = {
                     axisLabel: {show: false},
                     min: 0, max: 30000,
                 },
-                {gridIndex: 1, min: 0, max: 30000, position: "top"},
+                {
+                    gridIndex: 1,
+                    min: 0,
+                    max: 30000,
+                    position: "top",
+                    axisLabel: {formatter: (value) => value.toLocaleString()}
+                },
             ],
             yAxis: [
                 {
@@ -2786,6 +2817,7 @@ const chartsConfigurations = {
     tauxEmploi:
         {
             title: {text: "Taux d’emploi"},
+            tooltip: {valueFormatter: (value) => value.toLocaleString() + " %"},
             dataset: {
                 source: data.tauxEmploi,
             },
@@ -2841,6 +2873,7 @@ const chartsConfigurations = {
     tauxEmploiAge:
         {
             title: {text: "Taux d’emploi"},
+            tooltip: {valueFormatter: (value) => value.toLocaleString() + " %"},
             dataset: {
                 source: data.tauxEmploi,
             },
@@ -2911,6 +2944,7 @@ const chartsConfigurations = {
     tauxEmploiGenre:
         {
             title: {text: "Taux d’emploi"},
+            tooltip: {valueFormatter: (value) => value.toLocaleString() + " %"},
             dataset: {
                 source: data.tauxEmploi,
             },
