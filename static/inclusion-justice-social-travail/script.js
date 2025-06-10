@@ -3073,6 +3073,7 @@ const mapConfigurations = {
         layers: [mapLayers.osm, mapLayers.siae],
         coordinates: [47.22, -1.56],
         zoom: 12,
+        source: "CRESS, Insee",
     },
 };
 

@@ -268,6 +268,8 @@ function scrollMap(scrollData) {
     */
     // On ajoute les couches à la carte
     addLayersToMap(divId, mapName);
+    // On ajoute la légende s’il en y a une de demandée
+    addSourceToMap(divId, mapName);
     // On ajoute la légende s’il y en a une de demandée
     addLegendToMap(divId, mapName);
     // On ajoute le titre s’il y en a un de demandé
@@ -329,6 +331,28 @@ async function addLayersToMap(divId, mapName) {
     const layers = await mapConfig.layers;
     for (let layer of layers) {
         (await layer).addTo(map);
+    }
+}
+
+function addSourceToMap(divId, mapName) {
+    /*
+    Ajoute la source mentionnée dans la configuration de la carte.
+     */
+    // Récupère la référence de la carte
+    const map = mapRegistry[divId];
+    // Récupère la configuration de la carte
+    const mapConfig = mapConfigurations[mapName];
+    // Récupère la légende
+    const source = mapConfig.source;
+    const position = mapConfig.elementSide === "right" ? "bottomright" : "bottomleft";
+    if (source) {
+        let sourceControl = L.control({position: position});
+        sourceControl.onAdd = function (map) {
+            let e = L.DomUtil.create("p", "source");
+            e.innerHTML = source;
+            return e;
+        }
+        sourceControl.addTo(map);
     }
 }
 
