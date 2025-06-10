@@ -275,11 +275,12 @@ Indicateur de scroll
 ------------------------------------------ */
 .scroll-indicator {
     position: absolute;
-    width: 100px;
-    height: 100px;
-    bottom: 15px;
+    width: 70px;
+    height: 70px;
+    bottom: 25px;
     left: calc(50vw - 50px);
     background-image: url("./scroll-indicator.svg");
+    background-size: contain;
     animation: 1s ease-in-out infinite alternate clignote;
     z-index: 2;
 }
