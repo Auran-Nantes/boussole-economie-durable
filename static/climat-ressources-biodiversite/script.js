@@ -556,7 +556,7 @@ const mapConfigurations = {
             coordinates: [47.22, -1.56],
             zoom: 12,
             legend: mapLegends.conso_zan,
-            source: "Conso ZAN 44 - Auran, Nantes Métropole, Département 44",
+            source: "Conso ZAN 44 - Auran, Nantes Métropole, Département 44, DDTM 44",
         },
     cadastre_vert:
         {
