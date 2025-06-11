@@ -557,6 +557,16 @@ scroll-scene {
         margin: 20px auto;
         border: solid var(--section-color-lighter) 5px;
     }
+
+    &.inactive {
+        background-color: var(--color-black-lighter);
+        color: var(--color-black-light);
+
+        &:hover {
+            margin: unset;
+            border:unset;
+        }
+    }
 }
 
 a {
