@@ -99,7 +99,7 @@ const chartsConfigurations = {
         color: [colors.secondary1, colors.secondary1lighter],
     },
     ess: {
-        title: {text: "L’Économie Sociale et Solidaire à Nantes Métropole"},
+        title: {text: "Évolution de l’emploi dans l’ESS à Nantes Métropole"},
         grid: {right: 120},
         tooltip: {valueFormatter: (value) => value.toFixed(0).toLocaleString(), trigger: "axis"},
         dataset: {
