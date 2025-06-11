@@ -175,6 +175,10 @@ header {
         display: flex;
         gap: 17px;
         padding: 6px 15px;
+
+        .logo {
+            width: calc(var(--header-height) / 2 - (2*6px));
+        }
     }
 
     nav {
