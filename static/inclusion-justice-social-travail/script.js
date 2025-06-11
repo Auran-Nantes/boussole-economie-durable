@@ -3107,6 +3107,18 @@ const mapLayers = {
 ;
 
 /*
+Configurations des légendes, sous forme d’un dictionnaire.
+ */
+const mapLegends = {
+    siae: [
+        {
+            layer: mapLayers.siae,
+            style: {type: "image-only", img: "static/inclusion-justice-social-travail/legende-siae.png"}
+        }
+    ],
+};
+
+/*
 Configurations des cartes, sous forme d’un dictionnaire.
 Les clés sont les noms des cartes (à renseigner dans l’attribut scroll-map-name dans le HTML)
 Chaque configuration est un objet contenant :
@@ -3120,6 +3132,7 @@ const mapConfigurations = {
         layers: [mapLayers.osm, mapLayers.siae],
         coordinates: [47.22, -1.56],
         zoom: 12,
+        legend: mapLegends.siae,
         source: "CRESS, Insee",
     },
 };
@@ -3128,7 +3141,7 @@ const mapConfigurations = {
 HTML customs
  */
 const customHtml = {
-    // Il n’est pas possibl d’intégrer un script avec innerHtml, il n’est pas exécuté. Pour cela, on utilise un
+    // Il n’est pas possible d’intégrer un script avec innerHtml, il n’est pas exécuté. Pour cela, on utilise un
     // "post-hook"
     interdecile: '<div id="interdecile-flourish-div" class="flourish-embed flourish-scatter" data-src="visualisation/22788120"></div>'
 }
